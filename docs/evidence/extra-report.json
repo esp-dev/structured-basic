@@ -1,0 +1,141 @@
+{
+  "commands": [
+    {
+      "command": [
+        "git",
+        "--version"
+      ],
+      "exit": 0,
+      "stdout": "git version 2.40.0.windows.1\n",
+      "stderr": ""
+    },
+    {
+      "command": [
+        "cmake",
+        "--version"
+      ],
+      "exit": 0,
+      "stdout": "cmake version 4.2.2\n\nCMake suite maintained and supported by Kitware (kitware.com/cmake).\n",
+      "stderr": ""
+    },
+    {
+      "command": [
+        "<msys2>\\ucrt64\\bin\\gcc.exe",
+        "-std=c99",
+        "-O0",
+        "-fanalyzer",
+        "-Wall",
+        "-Wextra",
+        "-Wpedantic",
+        "-Wconversion",
+        "-Wshadow",
+        "-Werror",
+        "-Iinclude",
+        "-c",
+        "src/compiler.c",
+        "-o",
+        "<workspace>\\structured-basic\\build\\compiler-analysis.o"
+      ],
+      "exit": 0,
+      "stdout": "",
+      "stderr": ""
+    },
+    {
+      "command": [
+        "<msys2>\\ucrt64\\bin\\gcc.exe",
+        "-std=c99",
+        "-O0",
+        "-fanalyzer",
+        "-Wall",
+        "-Wextra",
+        "-Wpedantic",
+        "-Wconversion",
+        "-Wshadow",
+        "-Werror",
+        "-Iinclude",
+        "-c",
+        "src/vm.c",
+        "-o",
+        "<workspace>\\structured-basic\\build\\vm-analysis.o"
+      ],
+      "exit": 0,
+      "stdout": "",
+      "stderr": ""
+    },
+    {
+      "command": [
+        "<home>\\AppData\\Local\\Arduino15\\packages\\arduino\\tools\\avr-gcc\\7.3.0-atmel3.6.1-arduino7\\bin\\avr-nm.exe",
+        "<workspace>\\structured-basic\\build\\avr\\firmware.elf"
+      ],
+      "exit": 0,
+      "stdout": "00000120 t .do_clear_bss_loop\n00000122 t .do_clear_bss_start\n00000130 T __bad_interrupt\n0080215a B __bss_end\n00800144 B __bss_start\n000000f2 T __ctors_end\n000000f2 T __ctors_start\n00800144 D __data_end\n00002754 A __data_load_end\n00002710 A __data_load_start\n0000ff00 A __DATA_REGION_LENGTH__\n00800100 A __DATA_REGION_ORIGIN__\n00800100 D __data_start\n00002632 T __divmodsi4\n0000265e t __divmodsi4_exit\n00002650 t __divmodsi4_neg2\n00000118 T __do_clear_bss\n000000fe T __do_copy_data\n000000f2 T __dtors_end\n000000f2 T __dtors_start\n00810000 N __eeprom_end\n00010000 A __EEPROM_REGION_LENGTH__\n00000003 A __FUSE_REGION_LENGTH__\n00000000 W __heap_end\n000000f2 W __init\n00000400 A __LOCK_REGION_LENGTH__\n000025ce T __mulsi3\n00002682 T __muluhisi3\n00002660 T __negsi2\n0000003b a __RAMPZ__\n0000003b a __RAMPZ__\n0000003b a __RAMPZ__\n00000400 A __SIGNATURE_REGION_LENGTH__\n0000003e a __SP_H__\n0000003e a __SP_H__\n0000003e a __SP_H__\n0000003d a __SP_L__\n0000003d a __SP_L__\n0000003d a __SP_L__\n0000003f a __SREG__\n0000003f a __SREG__\n0000003f a __SREG__\n000040ff W __stack\n0000270e t __stop_program\n00002670 T __tablejump2__\n00020000 A __TEXT_REGION_LENGTH__\n00000000 a __tmp_reg__\n00000000 a __tmp_reg__\n00000000 a __tmp_reg__\n0000008c T __trampolines_end\n0000008c T __trampolines_start\n000025ee T __udivmodsi4\n00002614 t __udivmodsi4_ep\n000025fa t __udivmodsi4_loop\n00002698 T __umulhisi3\n00000400 A __USER_SIGNATURE_REGION_LENGTH__\n00000130 W __vector_1\n00000130 W __vector_10\n00000130 W __vector_11\n00000130 W __vector_12\n00000130 W __vector_13\n00000130 W __vector_14\n00000130 W __vector_15\n00000130 W __vector_16\n00000130 W __vector_17\n00000130 W __vector_18\n00000130 W __vector_19\n00000130 W __vector_2\n00000130 W __vector_20\n00000130 W __vector_21\n00000130 W __vector_22\n00000130 W __vector_23\n00000130 W __vector_24\n00000130 W __vector_25\n00000130 W __vector_26\n00000130 W __vector_27\n00000130 W __vector_28\n00000130 W __vector_29\n00000130 W __vector_3\n00000130 W __vector_30\n00000130 W __vector_31\n00000130 W __vector_32\n00000130 W __vector_33\n00000130 W __vector_34\n00000130 W __vector_4\n00000130 W __vector_5\n00000130 W __vector_6\n00000130 W __vector_7\n00000130 W __vector_8\n00000130 W __vector_9\n00000000 W __vector_default\n00000000 T __vectors\n00000001 a __zero_reg__\n00000001 a __zero_reg__\n00000001 a __zero_reg__\n00800144 D _edata\n0080215a N _end\n00002710 T _etext\n0000270c T _exit\n00000aaa t accept\n000004b4 t add.isra.11\n00800145 b basic\n00000374 t block_top\n00000278 t branch\n00000210 t constant\n000001ac t emit.isra.1\n0000270c W exit\n00000ac6 t expect\n00000afa t expression\n000003c6 t find.isra.8\n00800144 B firmware_status\n00002466 t flash_read\n000002b4 t flush_operators\n00001a28 t jump\n0000064c t lex_next\n00000626 t line_end\n0000254c T main\n000026b6 T memcpy\n000026c8 T memmove\n000026ec T memset\n0000197a t need\n00000330 t operator_push\n00000316 t patch.isra.2\n000019be t peaks\n00000168 t peek\n00001a64 t pop\n0000008c t program\n00001ac8 t push\n0000148e T sb_compile\n00000134 t sb_fail\n00001946 t sb_fail\n00001b50 T sb_init\n00001b62 T sb_run\n00000fb8 t statement\n000026fa T strcmp\n00002458 t uart_byte\n00002472 t uart_print\n00000450 t variable\n000001ee t word\n",
+      "stderr": ""
+    },
+    {
+      "command": [
+        "cmake",
+        "-S",
+        ".",
+        "-B",
+        "<workspace>\\structured-basic\\build\\cmake-host",
+        "-G",
+        "Ninja",
+        "-DCMAKE_MAKE_PROGRAM=<msys2>\\ucrt64\\bin\\ninja.EXE",
+        "-DCMAKE_C_COMPILER=<msys2>\\ucrt64\\bin\\gcc.exe",
+        "-DCMAKE_BUILD_TYPE=Release",
+        "-DPython3_EXECUTABLE=<home>\\AppData\\Local\\Programs\\Python\\Python310\\python.exe"
+      ],
+      "exit": 0,
+      "stdout": "-- Configuring done (0.3s)\n-- Generating done (0.0s)\n-- Build files have been written to: <workspace>/structured-basic/build/cmake-host\n",
+      "stderr": ""
+    },
+    {
+      "command": [
+        "cmake",
+        "--build",
+        "<workspace>\\structured-basic\\build\\cmake-host"
+      ],
+      "exit": 0,
+      "stdout": "[1/4] Building C object CMakeFiles/sbasic_core.dir/src/compiler.c.obj\n[2/4] Linking C static library libsbasic_core.a\n[3/4] Linking C executable sbasic.exe\n[4/4] Linking C executable api_tests.exe\n",
+      "stderr": ""
+    },
+    {
+      "command": [
+        "ctest",
+        "--test-dir",
+        "<workspace>\\structured-basic\\build\\cmake-host",
+        "--output-on-failure"
+      ],
+      "exit": 0,
+      "stdout": "Test project <workspace>/structured-basic/build/cmake-host\n    Start 1: api\n1/2 Test #1: api ..............................   Passed    0.37 sec\n    Start 2: acceptance\n2/2 Test #2: acceptance .......................   Passed    4.62 sec\n\n100% tests passed, 0 tests failed out of 2\n\nTotal Test time (real) =   5.00 sec\n",
+      "stderr": ""
+    },
+    {
+      "command": [
+        "cmake",
+        "-S",
+        ".",
+        "-B",
+        "<workspace>\\structured-basic\\build\\cmake-avr",
+        "-G",
+        "Ninja",
+        "-DCMAKE_MAKE_PROGRAM=<msys2>\\ucrt64\\bin\\ninja.EXE",
+        "-DCMAKE_TOOLCHAIN_FILE=<workspace>\\structured-basic\\tools\\avr-toolchain.cmake"
+      ],
+      "exit": 0,
+      "stdout": "-- Configuring done (0.0s)\n-- Generating done (0.0s)\n-- Build files have been written to: <workspace>/structured-basic/build/cmake-avr\n",
+      "stderr": "CMake Warning:\n  Manually-specified variables were not used by the project:\n\n    CMAKE_TOOLCHAIN_FILE\n\n\n"
+    },
+    {
+      "command": [
+        "cmake",
+        "--build",
+        "<workspace>\\structured-basic\\build\\cmake-avr"
+      ],
+      "exit": 0,
+      "stdout": "[1/3] Building C object CMakeFiles/sbasic_core.dir/src/compiler.c.obj\n[2/3] Linking C static library libsbasic_core.a\n[3/3] Linking C executable sbasic_firmware\n",
+      "stderr": ""
+    }
+  ],
+  "status": "PASS"
+}

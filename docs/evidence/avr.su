@@ -1,0 +1,4 @@
+avr.c:16:13:uart_byte	2	static
+avr.c:20:12:flash_read	2	static
+avr.c:23:12:uart_print	25	static
+avr.c:35:5:main	12	static

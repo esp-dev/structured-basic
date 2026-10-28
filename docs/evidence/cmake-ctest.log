@@ -1,0 +1,35 @@
+Start testing: Oct 28 21:13 Œrodkowoeuropejski czas stand.
+----------------------------------------------------------
+1/2 Testing: api
+1/2 Test: api
+Command: "<workspace>/structured-basic/build/cmake-host/api_tests.exe"
+Directory: <workspace>/structured-basic/build/cmake-host
+"api" start time: Oct 28 21:13 Œrodkowoeuropejski czas stand.
+Output:
+----------------------------------------------------------
+API PASS: reset, recovery, independent contexts, diagnostics, callbacks, bytecode guards, exact call/data limits, 18000 source fuzz cases; sizeof(SBasic)=8220
+<end of output>
+Test time =   0.37 sec
+----------------------------------------------------------
+Test Passed.
+"api" end time: Oct 28 21:13 Œrodkowoeuropejski czas stand.
+"api" time elapsed: 00:00:00
+----------------------------------------------------------
+
+2/2 Testing: acceptance
+2/2 Test: acceptance
+Command: "<home>/AppData/Local/Programs/Python/Python310/python.exe" "<workspace>/structured-basic/tests/acceptance.py" "<workspace>/structured-basic/build/cmake-host/sbasic.exe"
+Directory: <workspace>/structured-basic/build/cmake-host
+"acceptance" start time: Oct 28 21:13 Œrodkowoeuropejski czas stand.
+Output:
+----------------------------------------------------------
+Acceptance: 342/342 PASS
+<end of output>
+Test time =   4.62 sec
+----------------------------------------------------------
+Test Passed.
+"acceptance" end time: Oct 28 21:13 Œrodkowoeuropejski czas stand.
+"acceptance" time elapsed: 00:00:04
+----------------------------------------------------------
+
+End testing: Oct 28 21:13 Œrodkowoeuropejski czas stand.

@@ -1,0 +1,2400 @@
+{
+  "passed": 342,
+  "total": 342,
+  "cases": [
+    {
+      "name": "precedence",
+      "pass": true,
+      "returncode": 0,
+      "stdout": "14\n20\n12\n3\n",
+      "stderr": ""
+    },
+    {
+      "name": "division_truncates",
+      "pass": true,
+      "returncode": 0,
+      "stdout": "-2\n-2\n-1\n1\n",
+      "stderr": ""
+    },
+    {
+      "name": "unary",
+      "pass": true,
+      "returncode": 0,
+      "stdout": "2\n3\n4\n-6\n",
+      "stderr": ""
+    },
+    {
+      "name": "comparisons",
+      "pass": true,
+      "returncode": 0,
+      "stdout": "1\n0\n1\n1\n1\n0\n",
+      "stderr": ""
+    },
+    {
+      "name": "integer_edges",
+      "pass": true,
+      "returncode": 0,
+      "stdout": "-2147483648\n2147483647\n-2147483648\n-2147483648\n0\n",
+      "stderr": ""
+    },
+    {
+      "name": "names_31_case_boundaries",
+      "pass": true,
+      "returncode": 0,
+      "stdout": "28\n",
+      "stderr": ""
+    },
+    {
+      "name": "prefix_distinction",
+      "pass": true,
+      "returncode": 0,
+      "stdout": "1\n",
+      "stderr": ""
+    },
+    {
+      "name": "comments_crlf_no_final_newline",
+      "pass": true,
+      "returncode": 0,
+      "stdout": "9\n",
+      "stderr": ""
+    },
+    {
+      "name": "empty",
+      "pass": true,
+      "returncode": 0,
+      "stdout": "",
+      "stderr": ""
+    },
+    {
+      "name": "end",
+      "pass": true,
+      "returncode": 0,
+      "stdout": "1\n",
+      "stderr": ""
+    },
+    {
+      "name": "if_nested",
+      "pass": true,
+      "returncode": 0,
+      "stdout": "7\n",
+      "stderr": ""
+    },
+    {
+      "name": "elseif_branch_0",
+      "pass": true,
+      "returncode": 0,
+      "stdout": "10\n",
+      "stderr": ""
+    },
+    {
+      "name": "elseif_branch_1",
+      "pass": true,
+      "returncode": 0,
+      "stdout": "11\n",
+      "stderr": ""
+    },
+    {
+      "name": "elseif_branch_2",
+      "pass": true,
+      "returncode": 0,
+      "stdout": "12\n",
+      "stderr": ""
+    },
+    {
+      "name": "elseif_branch_3",
+      "pass": true,
+      "returncode": 0,
+      "stdout": "13\n",
+      "stderr": ""
+    },
+    {
+      "name": "if_false_no_else",
+      "pass": true,
+      "returncode": 0,
+      "stdout": "2\n",
+      "stderr": ""
+    },
+    {
+      "name": "loop_nested",
+      "pass": true,
+      "returncode": 0,
+      "stdout": "30\n",
+      "stderr": ""
+    },
+    {
+      "name": "three_args_forward",
+      "pass": true,
+      "returncode": 0,
+      "stdout": "14\n",
+      "stderr": ""
+    },
+    {
+      "name": "args_evaluated_left_to_right",
+      "pass": true,
+      "returncode": 0,
+      "stdout": "123\n",
+      "stderr": ""
+    },
+    {
+      "name": "nested_calls",
+      "pass": true,
+      "returncode": 0,
+      "stdout": "15\n",
+      "stderr": ""
+    },
+    {
+      "name": "locals_shadow_globals",
+      "pass": true,
+      "returncode": 0,
+      "stdout": "6\n99\n7\n",
+      "stderr": ""
+    },
+    {
+      "name": "local_function_scope",
+      "pass": true,
+      "returncode": 0,
+      "stdout": "1\n1\n",
+      "stderr": ""
+    },
+    {
+      "name": "global_write_and_late_declaration",
+      "pass": true,
+      "returncode": 0,
+      "stdout": "3\n13\n13\n",
+      "stderr": ""
+    },
+    {
+      "name": "gcd",
+      "pass": true,
+      "returncode": 0,
+      "stdout": "21\n6\n9\n",
+      "stderr": ""
+    },
+    {
+      "name": "factorial",
+      "pass": true,
+      "returncode": 0,
+      "stdout": "479001600\n",
+      "stderr": ""
+    },
+    {
+      "name": "mutual_recursion",
+      "pass": true,
+      "returncode": 0,
+      "stdout": "1\n",
+      "stderr": ""
+    },
+    {
+      "name": "repeat_calls_release_frames",
+      "pass": true,
+      "returncode": 0,
+      "stdout": "2000\n",
+      "stderr": ""
+    },
+    {
+      "name": "implicit_return_zero",
+      "pass": true,
+      "returncode": 0,
+      "stdout": "0\n",
+      "stderr": ""
+    },
+    {
+      "name": "return_exits_nested_blocks",
+      "pass": true,
+      "returncode": 0,
+      "stdout": "42\n",
+      "stderr": ""
+    },
+    {
+      "name": "missing_rhs",
+      "pass": true,
+      "returncode": 1,
+      "stdout": "",
+      "stderr": "E1 line 1: Invalid syntax or block structure\n"
+    },
+    {
+      "name": "numbered_line",
+      "pass": true,
+      "returncode": 1,
+      "stdout": "",
+      "stderr": "E1 line 1: Invalid syntax or block structure\n"
+    },
+    {
+      "name": "long_name",
+      "pass": true,
+      "returncode": 2,
+      "stdout": "",
+      "stderr": "E2 line 1: Identifier exceeds 31 characters\n"
+    },
+    {
+      "name": "huge_literal",
+      "pass": true,
+      "returncode": 3,
+      "stdout": "",
+      "stderr": "E3 line 1: Integer literal out of range\n"
+    },
+    {
+      "name": "positive_out_of_range",
+      "pass": true,
+      "returncode": 3,
+      "stdout": "",
+      "stderr": "E3 line 1: Integer literal out of range\n"
+    },
+    {
+      "name": "unknown_read",
+      "pass": true,
+      "returncode": 4,
+      "stdout": "",
+      "stderr": "E4 line 1: Undeclared variable or function\n"
+    },
+    {
+      "name": "unknown_function",
+      "pass": true,
+      "returncode": 4,
+      "stdout": "",
+      "stderr": "E4 line 1: Undeclared variable or function\n"
+    },
+    {
+      "name": "undeclared_function_write",
+      "pass": true,
+      "returncode": 4,
+      "stdout": "",
+      "stderr": "E4 line 2: Undeclared variable or function\n"
+    },
+    {
+      "name": "local_not_global",
+      "pass": true,
+      "returncode": 4,
+      "stdout": "",
+      "stderr": "E4 line 4: Undeclared variable or function\n"
+    },
+    {
+      "name": "duplicate_function",
+      "pass": true,
+      "returncode": 5,
+      "stdout": "",
+      "stderr": "E5 line 3: Duplicate declaration\n"
+    },
+    {
+      "name": "duplicate_parameter",
+      "pass": true,
+      "returncode": 5,
+      "stdout": "",
+      "stderr": "E5 line 1: Duplicate declaration\n"
+    },
+    {
+      "name": "duplicate_local",
+      "pass": true,
+      "returncode": 5,
+      "stdout": "",
+      "stderr": "E5 line 2: Duplicate declaration\n"
+    },
+    {
+      "name": "duplicate_local_list",
+      "pass": true,
+      "returncode": 5,
+      "stdout": "",
+      "stderr": "E5 line 2: Duplicate declaration\n"
+    },
+    {
+      "name": "global_function_collision",
+      "pass": true,
+      "returncode": 5,
+      "stdout": "",
+      "stderr": "E5 line 2: Duplicate declaration\n"
+    },
+    {
+      "name": "missing_argument",
+      "pass": true,
+      "returncode": 6,
+      "stdout": "",
+      "stderr": "E6 line 4: Wrong number of arguments\n"
+    },
+    {
+      "name": "extra_argument",
+      "pass": true,
+      "returncode": 6,
+      "stdout": "",
+      "stderr": "E6 line 3: Wrong number of arguments\n"
+    },
+    {
+      "name": "empty_arguments",
+      "pass": true,
+      "returncode": 6,
+      "stdout": "",
+      "stderr": "E6 line 3: Wrong number of arguments\n"
+    },
+    {
+      "name": "divide_zero",
+      "pass": true,
+      "returncode": 10,
+      "stdout": "",
+      "stderr": "E10 line 1: Division by zero\n"
+    },
+    {
+      "name": "mod_zero",
+      "pass": true,
+      "returncode": 10,
+      "stdout": "",
+      "stderr": "E10 line 1: Division by zero\n"
+    },
+    {
+      "name": "add_overflow",
+      "pass": true,
+      "returncode": 11,
+      "stdout": "",
+      "stderr": "E11 line 1: Integer arithmetic overflow\n"
+    },
+    {
+      "name": "add_underflow",
+      "pass": true,
+      "returncode": 11,
+      "stdout": "",
+      "stderr": "E11 line 1: Integer arithmetic overflow\n"
+    },
+    {
+      "name": "sub_overflow",
+      "pass": true,
+      "returncode": 11,
+      "stdout": "",
+      "stderr": "E11 line 1: Integer arithmetic overflow\n"
+    },
+    {
+      "name": "sub_underflow",
+      "pass": true,
+      "returncode": 11,
+      "stdout": "",
+      "stderr": "E11 line 1: Integer arithmetic overflow\n"
+    },
+    {
+      "name": "mul_overflow",
+      "pass": true,
+      "returncode": 11,
+      "stdout": "",
+      "stderr": "E11 line 1: Integer arithmetic overflow\n"
+    },
+    {
+      "name": "mul_underflow",
+      "pass": true,
+      "returncode": 11,
+      "stdout": "",
+      "stderr": "E11 line 1: Integer arithmetic overflow\n"
+    },
+    {
+      "name": "mul_negative_negative",
+      "pass": true,
+      "returncode": 11,
+      "stdout": "",
+      "stderr": "E11 line 1: Integer arithmetic overflow\n"
+    },
+    {
+      "name": "divide_overflow",
+      "pass": true,
+      "returncode": 11,
+      "stdout": "",
+      "stderr": "E11 line 1: Integer arithmetic overflow\n"
+    },
+    {
+      "name": "mod_overflow",
+      "pass": true,
+      "returncode": 11,
+      "stdout": "",
+      "stderr": "E11 line 1: Integer arithmetic overflow\n"
+    },
+    {
+      "name": "negate_overflow",
+      "pass": true,
+      "returncode": 11,
+      "stdout": "",
+      "stderr": "E11 line 1: Integer arithmetic overflow\n"
+    },
+    {
+      "name": "unmatched_if",
+      "pass": true,
+      "returncode": 1,
+      "stdout": "",
+      "stderr": "E1 line 3: Invalid syntax or block structure\n"
+    },
+    {
+      "name": "unmatched_while",
+      "pass": true,
+      "returncode": 1,
+      "stdout": "",
+      "stderr": "E1 line 2: Invalid syntax or block structure\n"
+    },
+    {
+      "name": "unmatched_wend",
+      "pass": true,
+      "returncode": 1,
+      "stdout": "",
+      "stderr": "E1 line 1: Invalid syntax or block structure\n"
+    },
+    {
+      "name": "else_without_if",
+      "pass": true,
+      "returncode": 1,
+      "stdout": "",
+      "stderr": "E1 line 1: Invalid syntax or block structure\n"
+    },
+    {
+      "name": "endif_without_if",
+      "pass": true,
+      "returncode": 1,
+      "stdout": "",
+      "stderr": "E1 line 1: Invalid syntax or block structure\n"
+    },
+    {
+      "name": "elseif_after_else",
+      "pass": true,
+      "returncode": 1,
+      "stdout": "",
+      "stderr": "E1 line 3: Invalid syntax or block structure\n"
+    },
+    {
+      "name": "duplicate_else",
+      "pass": true,
+      "returncode": 1,
+      "stdout": "",
+      "stderr": "E1 line 3: Invalid syntax or block structure\n"
+    },
+    {
+      "name": "crossed_blocks",
+      "pass": true,
+      "returncode": 1,
+      "stdout": "",
+      "stderr": "E1 line 3: Invalid syntax or block structure\n"
+    },
+    {
+      "name": "single_line_if_rejected",
+      "pass": true,
+      "returncode": 1,
+      "stdout": "",
+      "stderr": "E1 line 1: Invalid syntax or block structure\n"
+    },
+    {
+      "name": "missing_then",
+      "pass": true,
+      "returncode": 1,
+      "stdout": "",
+      "stderr": "E1 line 1: Invalid syntax or block structure\n"
+    },
+    {
+      "name": "empty_condition",
+      "pass": true,
+      "returncode": 1,
+      "stdout": "",
+      "stderr": "E1 line 1: Invalid syntax or block structure\n"
+    },
+    {
+      "name": "missing_paren",
+      "pass": true,
+      "returncode": 1,
+      "stdout": "",
+      "stderr": "E1 line 1: Invalid syntax or block structure\n"
+    },
+    {
+      "name": "extra_paren",
+      "pass": true,
+      "returncode": 1,
+      "stdout": "",
+      "stderr": "E1 line 1: Invalid syntax or block structure\n"
+    },
+    {
+      "name": "empty_paren",
+      "pass": true,
+      "returncode": 1,
+      "stdout": "",
+      "stderr": "E1 line 1: Invalid syntax or block structure\n"
+    },
+    {
+      "name": "missing_operator",
+      "pass": true,
+      "returncode": 1,
+      "stdout": "",
+      "stderr": "E1 line 1: Invalid syntax or block structure\n"
+    },
+    {
+      "name": "trailing_comma",
+      "pass": true,
+      "returncode": 1,
+      "stdout": "",
+      "stderr": "E1 line 3: Invalid syntax or block structure\n"
+    },
+    {
+      "name": "leading_comma",
+      "pass": true,
+      "returncode": 1,
+      "stdout": "",
+      "stderr": "E1 line 3: Invalid syntax or block structure\n"
+    },
+    {
+      "name": "operator_before_close",
+      "pass": true,
+      "returncode": 1,
+      "stdout": "",
+      "stderr": "E1 line 3: Invalid syntax or block structure\n"
+    },
+    {
+      "name": "comma_in_group",
+      "pass": true,
+      "returncode": 1,
+      "stdout": "",
+      "stderr": "E1 line 1: Invalid syntax or block structure\n"
+    },
+    {
+      "name": "return_main",
+      "pass": true,
+      "returncode": 1,
+      "stdout": "",
+      "stderr": "E1 line 1: Invalid syntax or block structure\n"
+    },
+    {
+      "name": "local_main",
+      "pass": true,
+      "returncode": 1,
+      "stdout": "",
+      "stderr": "E1 line 1: Invalid syntax or block structure\n"
+    },
+    {
+      "name": "unclosed_function",
+      "pass": true,
+      "returncode": 1,
+      "stdout": "",
+      "stderr": "E1 line 3: Invalid syntax or block structure\n"
+    },
+    {
+      "name": "endfunction_main",
+      "pass": true,
+      "returncode": 1,
+      "stdout": "",
+      "stderr": "E1 line 1: Invalid syntax or block structure\n"
+    },
+    {
+      "name": "function_in_block",
+      "pass": true,
+      "returncode": 1,
+      "stdout": "",
+      "stderr": "E1 line 2: Invalid syntax or block structure\n"
+    },
+    {
+      "name": "nested_function",
+      "pass": true,
+      "returncode": 1,
+      "stdout": "",
+      "stderr": "E1 line 2: Invalid syntax or block structure\n"
+    },
+    {
+      "name": "function_block_unclosed",
+      "pass": true,
+      "returncode": 1,
+      "stdout": "",
+      "stderr": "E1 line 3: Invalid syntax or block structure\n"
+    },
+    {
+      "name": "compile_before_any_output",
+      "pass": true,
+      "returncode": 4,
+      "stdout": "",
+      "stderr": "E4 line 2: Undeclared variable or function\n"
+    },
+    {
+      "name": "bad_character",
+      "pass": true,
+      "returncode": 1,
+      "stdout": "",
+      "stderr": "E1 line 1: Invalid syntax or block structure\n"
+    },
+    {
+      "name": "nul_byte",
+      "pass": true,
+      "returncode": 1,
+      "stdout": "",
+      "stderr": "E1 line 1: Invalid syntax or block structure\n"
+    },
+    {
+      "name": "program_capacity",
+      "pass": true,
+      "returncode": 7,
+      "stdout": "",
+      "stderr": "E7 line 911: BASIC memory pool exhausted\n"
+    },
+    {
+      "name": "symbol_capacity",
+      "pass": true,
+      "returncode": 8,
+      "stdout": "",
+      "stderr": "E8 line 256: Compiler nesting or symbol limit exceeded\n"
+    },
+    {
+      "name": "expression_capacity",
+      "pass": true,
+      "returncode": 8,
+      "stdout": "",
+      "stderr": "E8 line 1: Compiler nesting or symbol limit exceeded\n"
+    },
+    {
+      "name": "block_capacity",
+      "pass": true,
+      "returncode": 8,
+      "stdout": "",
+      "stderr": "E8 line 33: Compiler nesting or symbol limit exceeded\n"
+    },
+    {
+      "name": "call_stack_capacity",
+      "pass": true,
+      "returncode": 9,
+      "stdout": "",
+      "stderr": "E9 line 2: VM call or operand stack limit exceeded\n"
+    },
+    {
+      "name": "operand_stack_capacity",
+      "pass": true,
+      "returncode": 9,
+      "stdout": "",
+      "stderr": "E9 line 4: VM call or operand stack limit exceeded\n"
+    },
+    {
+      "name": "runtime_pool_capacity",
+      "pass": true,
+      "returncode": 7,
+      "stdout": "",
+      "stderr": "E7 line 3: BASIC memory pool exhausted\n"
+    },
+    {
+      "name": "globals_pool_capacity",
+      "pass": true,
+      "returncode": 7,
+      "stdout": "",
+      "stderr": "E7 line 711: BASIC memory pool exhausted\n"
+    },
+    {
+      "name": "step_budget",
+      "pass": true,
+      "returncode": 13,
+      "stdout": "",
+      "stderr": "E13 line 2: Instruction budget exhausted\n"
+    },
+    {
+      "name": "line_diagnostic",
+      "pass": true,
+      "returncode": 10,
+      "stdout": "",
+      "stderr": "E10 line 3: Division by zero\n"
+    },
+    {
+      "name": "elseif_condition_line",
+      "pass": true,
+      "returncode": 10,
+      "stdout": "",
+      "stderr": "E10 line 3: Division by zero\n"
+    },
+    {
+      "name": "last_line_function",
+      "pass": true,
+      "returncode": 0,
+      "stdout": "3\n",
+      "stderr": ""
+    },
+    {
+      "name": "max_block_depth",
+      "pass": true,
+      "returncode": 0,
+      "stdout": "7\n",
+      "stderr": ""
+    },
+    {
+      "name": "max_expression_depth",
+      "pass": true,
+      "returncode": 0,
+      "stdout": "1\n",
+      "stderr": ""
+    },
+    {
+      "name": "max_operand_depth",
+      "pass": true,
+      "returncode": 0,
+      "stdout": "2\n",
+      "stderr": ""
+    },
+    {
+      "name": "expression_tree_0",
+      "pass": true,
+      "returncode": 0,
+      "stdout": "86\n",
+      "stderr": ""
+    },
+    {
+      "name": "expression_tree_1",
+      "pass": true,
+      "returncode": 0,
+      "stdout": "5\n",
+      "stderr": ""
+    },
+    {
+      "name": "expression_tree_2",
+      "pass": true,
+      "returncode": 0,
+      "stdout": "-8\n",
+      "stderr": ""
+    },
+    {
+      "name": "expression_tree_3",
+      "pass": true,
+      "returncode": 0,
+      "stdout": "-4\n",
+      "stderr": ""
+    },
+    {
+      "name": "expression_tree_4",
+      "pass": true,
+      "returncode": 0,
+      "stdout": "3\n",
+      "stderr": ""
+    },
+    {
+      "name": "expression_tree_5",
+      "pass": true,
+      "returncode": 0,
+      "stdout": "0\n",
+      "stderr": ""
+    },
+    {
+      "name": "expression_tree_6",
+      "pass": true,
+      "returncode": 0,
+      "stdout": "-20\n",
+      "stderr": ""
+    },
+    {
+      "name": "expression_tree_7",
+      "pass": true,
+      "returncode": 0,
+      "stdout": "0\n",
+      "stderr": ""
+    },
+    {
+      "name": "expression_tree_8",
+      "pass": true,
+      "returncode": 0,
+      "stdout": "0\n",
+      "stderr": ""
+    },
+    {
+      "name": "expression_tree_9",
+      "pass": true,
+      "returncode": 0,
+      "stdout": "6\n",
+      "stderr": ""
+    },
+    {
+      "name": "expression_tree_10",
+      "pass": true,
+      "returncode": 0,
+      "stdout": "-1\n",
+      "stderr": ""
+    },
+    {
+      "name": "expression_tree_11",
+      "pass": true,
+      "returncode": 0,
+      "stdout": "-22\n",
+      "stderr": ""
+    },
+    {
+      "name": "expression_tree_12",
+      "pass": true,
+      "returncode": 0,
+      "stdout": "1\n",
+      "stderr": ""
+    },
+    {
+      "name": "expression_tree_13",
+      "pass": true,
+      "returncode": 0,
+      "stdout": "1\n",
+      "stderr": ""
+    },
+    {
+      "name": "expression_tree_14",
+      "pass": true,
+      "returncode": 0,
+      "stdout": "-7\n",
+      "stderr": ""
+    },
+    {
+      "name": "expression_tree_15",
+      "pass": true,
+      "returncode": 0,
+      "stdout": "0\n",
+      "stderr": ""
+    },
+    {
+      "name": "expression_tree_16",
+      "pass": true,
+      "returncode": 0,
+      "stdout": "0\n",
+      "stderr": ""
+    },
+    {
+      "name": "expression_tree_17",
+      "pass": true,
+      "returncode": 0,
+      "stdout": "0\n",
+      "stderr": ""
+    },
+    {
+      "name": "expression_tree_18",
+      "pass": true,
+      "returncode": 0,
+      "stdout": "-10\n",
+      "stderr": ""
+    },
+    {
+      "name": "expression_tree_19",
+      "pass": true,
+      "returncode": 0,
+      "stdout": "1\n",
+      "stderr": ""
+    },
+    {
+      "name": "expression_tree_20",
+      "pass": true,
+      "returncode": 0,
+      "stdout": "-7\n",
+      "stderr": ""
+    },
+    {
+      "name": "expression_tree_21",
+      "pass": true,
+      "returncode": 0,
+      "stdout": "-7\n",
+      "stderr": ""
+    },
+    {
+      "name": "expression_tree_22",
+      "pass": true,
+      "returncode": 0,
+      "stdout": "0\n",
+      "stderr": ""
+    },
+    {
+      "name": "expression_tree_23",
+      "pass": true,
+      "returncode": 0,
+      "stdout": "-9\n",
+      "stderr": ""
+    },
+    {
+      "name": "expression_tree_24",
+      "pass": true,
+      "returncode": 0,
+      "stdout": "4\n",
+      "stderr": ""
+    },
+    {
+      "name": "expression_tree_25",
+      "pass": true,
+      "returncode": 0,
+      "stdout": "0\n",
+      "stderr": ""
+    },
+    {
+      "name": "expression_tree_26",
+      "pass": true,
+      "returncode": 0,
+      "stdout": "0\n",
+      "stderr": ""
+    },
+    {
+      "name": "expression_tree_27",
+      "pass": true,
+      "returncode": 0,
+      "stdout": "0\n",
+      "stderr": ""
+    },
+    {
+      "name": "expression_tree_28",
+      "pass": true,
+      "returncode": 0,
+      "stdout": "1\n",
+      "stderr": ""
+    },
+    {
+      "name": "expression_tree_29",
+      "pass": true,
+      "returncode": 0,
+      "stdout": "9\n",
+      "stderr": ""
+    },
+    {
+      "name": "expression_tree_30",
+      "pass": true,
+      "returncode": 0,
+      "stdout": "0\n",
+      "stderr": ""
+    },
+    {
+      "name": "expression_tree_31",
+      "pass": true,
+      "returncode": 0,
+      "stdout": "4\n",
+      "stderr": ""
+    },
+    {
+      "name": "expression_tree_32",
+      "pass": true,
+      "returncode": 0,
+      "stdout": "-2\n",
+      "stderr": ""
+    },
+    {
+      "name": "expression_tree_33",
+      "pass": true,
+      "returncode": 0,
+      "stdout": "1\n",
+      "stderr": ""
+    },
+    {
+      "name": "expression_tree_34",
+      "pass": true,
+      "returncode": 0,
+      "stdout": "41\n",
+      "stderr": ""
+    },
+    {
+      "name": "expression_tree_35",
+      "pass": true,
+      "returncode": 0,
+      "stdout": "0\n",
+      "stderr": ""
+    },
+    {
+      "name": "expression_tree_36",
+      "pass": true,
+      "returncode": 0,
+      "stdout": "0\n",
+      "stderr": ""
+    },
+    {
+      "name": "expression_tree_37",
+      "pass": true,
+      "returncode": 0,
+      "stdout": "-5\n",
+      "stderr": ""
+    },
+    {
+      "name": "expression_tree_38",
+      "pass": true,
+      "returncode": 0,
+      "stdout": "0\n",
+      "stderr": ""
+    },
+    {
+      "name": "expression_tree_39",
+      "pass": true,
+      "returncode": 0,
+      "stdout": "-6\n",
+      "stderr": ""
+    },
+    {
+      "name": "expression_tree_40",
+      "pass": true,
+      "returncode": 0,
+      "stdout": "128\n",
+      "stderr": ""
+    },
+    {
+      "name": "expression_tree_41",
+      "pass": true,
+      "returncode": 0,
+      "stdout": "4\n",
+      "stderr": ""
+    },
+    {
+      "name": "expression_tree_42",
+      "pass": true,
+      "returncode": 0,
+      "stdout": "-16\n",
+      "stderr": ""
+    },
+    {
+      "name": "expression_tree_43",
+      "pass": true,
+      "returncode": 0,
+      "stdout": "1\n",
+      "stderr": ""
+    },
+    {
+      "name": "expression_tree_44",
+      "pass": true,
+      "returncode": 0,
+      "stdout": "1\n",
+      "stderr": ""
+    },
+    {
+      "name": "expression_tree_45",
+      "pass": true,
+      "returncode": 0,
+      "stdout": "0\n",
+      "stderr": ""
+    },
+    {
+      "name": "expression_tree_46",
+      "pass": true,
+      "returncode": 0,
+      "stdout": "0\n",
+      "stderr": ""
+    },
+    {
+      "name": "expression_tree_47",
+      "pass": true,
+      "returncode": 0,
+      "stdout": "6\n",
+      "stderr": ""
+    },
+    {
+      "name": "expression_tree_48",
+      "pass": true,
+      "returncode": 0,
+      "stdout": "0\n",
+      "stderr": ""
+    },
+    {
+      "name": "expression_tree_49",
+      "pass": true,
+      "returncode": 0,
+      "stdout": "-3\n",
+      "stderr": ""
+    },
+    {
+      "name": "expression_tree_50",
+      "pass": true,
+      "returncode": 0,
+      "stdout": "0\n",
+      "stderr": ""
+    },
+    {
+      "name": "expression_tree_51",
+      "pass": true,
+      "returncode": 0,
+      "stdout": "0\n",
+      "stderr": ""
+    },
+    {
+      "name": "expression_tree_52",
+      "pass": true,
+      "returncode": 0,
+      "stdout": "0\n",
+      "stderr": ""
+    },
+    {
+      "name": "expression_tree_53",
+      "pass": true,
+      "returncode": 0,
+      "stdout": "-3\n",
+      "stderr": ""
+    },
+    {
+      "name": "expression_tree_54",
+      "pass": true,
+      "returncode": 0,
+      "stdout": "-9\n",
+      "stderr": ""
+    },
+    {
+      "name": "expression_tree_55",
+      "pass": true,
+      "returncode": 0,
+      "stdout": "4\n",
+      "stderr": ""
+    },
+    {
+      "name": "expression_tree_56",
+      "pass": true,
+      "returncode": 0,
+      "stdout": "0\n",
+      "stderr": ""
+    },
+    {
+      "name": "expression_tree_57",
+      "pass": true,
+      "returncode": 0,
+      "stdout": "0\n",
+      "stderr": ""
+    },
+    {
+      "name": "expression_tree_58",
+      "pass": true,
+      "returncode": 0,
+      "stdout": "8\n",
+      "stderr": ""
+    },
+    {
+      "name": "expression_tree_59",
+      "pass": true,
+      "returncode": 0,
+      "stdout": "42\n",
+      "stderr": ""
+    },
+    {
+      "name": "expression_tree_60",
+      "pass": true,
+      "returncode": 0,
+      "stdout": "-4\n",
+      "stderr": ""
+    },
+    {
+      "name": "expression_tree_61",
+      "pass": true,
+      "returncode": 0,
+      "stdout": "0\n",
+      "stderr": ""
+    },
+    {
+      "name": "expression_tree_62",
+      "pass": true,
+      "returncode": 0,
+      "stdout": "-6\n",
+      "stderr": ""
+    },
+    {
+      "name": "expression_tree_63",
+      "pass": true,
+      "returncode": 0,
+      "stdout": "0\n",
+      "stderr": ""
+    },
+    {
+      "name": "expression_tree_64",
+      "pass": true,
+      "returncode": 0,
+      "stdout": "0\n",
+      "stderr": ""
+    },
+    {
+      "name": "expression_tree_65",
+      "pass": true,
+      "returncode": 0,
+      "stdout": "4\n",
+      "stderr": ""
+    },
+    {
+      "name": "expression_tree_66",
+      "pass": true,
+      "returncode": 0,
+      "stdout": "-5\n",
+      "stderr": ""
+    },
+    {
+      "name": "expression_tree_67",
+      "pass": true,
+      "returncode": 0,
+      "stdout": "15\n",
+      "stderr": ""
+    },
+    {
+      "name": "expression_tree_68",
+      "pass": true,
+      "returncode": 0,
+      "stdout": "6\n",
+      "stderr": ""
+    },
+    {
+      "name": "expression_tree_69",
+      "pass": true,
+      "returncode": 0,
+      "stdout": "56\n",
+      "stderr": ""
+    },
+    {
+      "name": "expression_tree_70",
+      "pass": true,
+      "returncode": 0,
+      "stdout": "0\n",
+      "stderr": ""
+    },
+    {
+      "name": "expression_tree_71",
+      "pass": true,
+      "returncode": 0,
+      "stdout": "4\n",
+      "stderr": ""
+    },
+    {
+      "name": "expression_tree_72",
+      "pass": true,
+      "returncode": 0,
+      "stdout": "0\n",
+      "stderr": ""
+    },
+    {
+      "name": "expression_tree_73",
+      "pass": true,
+      "returncode": 0,
+      "stdout": "16\n",
+      "stderr": ""
+    },
+    {
+      "name": "expression_tree_74",
+      "pass": true,
+      "returncode": 0,
+      "stdout": "56\n",
+      "stderr": ""
+    },
+    {
+      "name": "expression_tree_75",
+      "pass": true,
+      "returncode": 0,
+      "stdout": "1\n",
+      "stderr": ""
+    },
+    {
+      "name": "expression_tree_76",
+      "pass": true,
+      "returncode": 0,
+      "stdout": "12\n",
+      "stderr": ""
+    },
+    {
+      "name": "expression_tree_77",
+      "pass": true,
+      "returncode": 0,
+      "stdout": "0\n",
+      "stderr": ""
+    },
+    {
+      "name": "expression_tree_78",
+      "pass": true,
+      "returncode": 0,
+      "stdout": "-108\n",
+      "stderr": ""
+    },
+    {
+      "name": "expression_tree_79",
+      "pass": true,
+      "returncode": 0,
+      "stdout": "9\n",
+      "stderr": ""
+    },
+    {
+      "name": "integer_oracle_0",
+      "pass": true,
+      "returncode": 0,
+      "stdout": "1\n",
+      "stderr": ""
+    },
+    {
+      "name": "integer_oracle_1",
+      "pass": true,
+      "returncode": 11,
+      "stdout": "",
+      "stderr": "E11 line 1: Integer arithmetic overflow\n"
+    },
+    {
+      "name": "integer_oracle_2",
+      "pass": true,
+      "returncode": 11,
+      "stdout": "",
+      "stderr": "E11 line 1: Integer arithmetic overflow\n"
+    },
+    {
+      "name": "integer_oracle_3",
+      "pass": true,
+      "returncode": 0,
+      "stdout": "-46340\n",
+      "stderr": ""
+    },
+    {
+      "name": "integer_oracle_4",
+      "pass": true,
+      "returncode": 0,
+      "stdout": "0\n",
+      "stderr": ""
+    },
+    {
+      "name": "integer_oracle_5",
+      "pass": true,
+      "returncode": 0,
+      "stdout": "1\n",
+      "stderr": ""
+    },
+    {
+      "name": "integer_oracle_6",
+      "pass": true,
+      "returncode": 0,
+      "stdout": "1951234129\n",
+      "stderr": ""
+    },
+    {
+      "name": "integer_oracle_7",
+      "pass": true,
+      "returncode": 11,
+      "stdout": "",
+      "stderr": "E11 line 1: Integer arithmetic overflow\n"
+    },
+    {
+      "name": "integer_oracle_8",
+      "pass": true,
+      "returncode": 0,
+      "stdout": "690179293\n",
+      "stderr": ""
+    },
+    {
+      "name": "integer_oracle_9",
+      "pass": true,
+      "returncode": 0,
+      "stdout": "2147437305\n",
+      "stderr": ""
+    },
+    {
+      "name": "integer_oracle_10",
+      "pass": true,
+      "returncode": 0,
+      "stdout": "1\n",
+      "stderr": ""
+    },
+    {
+      "name": "integer_oracle_11",
+      "pass": true,
+      "returncode": 0,
+      "stdout": "0\n",
+      "stderr": ""
+    },
+    {
+      "name": "integer_oracle_12",
+      "pass": true,
+      "returncode": 0,
+      "stdout": "0\n",
+      "stderr": ""
+    },
+    {
+      "name": "integer_oracle_13",
+      "pass": true,
+      "returncode": 0,
+      "stdout": "1\n",
+      "stderr": ""
+    },
+    {
+      "name": "integer_oracle_14",
+      "pass": true,
+      "returncode": 0,
+      "stdout": "0\n",
+      "stderr": ""
+    },
+    {
+      "name": "integer_oracle_15",
+      "pass": true,
+      "returncode": 0,
+      "stdout": "0\n",
+      "stderr": ""
+    },
+    {
+      "name": "integer_oracle_16",
+      "pass": true,
+      "returncode": 0,
+      "stdout": "1\n",
+      "stderr": ""
+    },
+    {
+      "name": "integer_oracle_17",
+      "pass": true,
+      "returncode": 0,
+      "stdout": "-2147483646\n",
+      "stderr": ""
+    },
+    {
+      "name": "integer_oracle_18",
+      "pass": true,
+      "returncode": 0,
+      "stdout": "0\n",
+      "stderr": ""
+    },
+    {
+      "name": "integer_oracle_19",
+      "pass": true,
+      "returncode": 0,
+      "stdout": "0\n",
+      "stderr": ""
+    },
+    {
+      "name": "integer_oracle_20",
+      "pass": true,
+      "returncode": 0,
+      "stdout": "1856650654\n",
+      "stderr": ""
+    },
+    {
+      "name": "integer_oracle_21",
+      "pass": true,
+      "returncode": 0,
+      "stdout": "0\n",
+      "stderr": ""
+    },
+    {
+      "name": "integer_oracle_22",
+      "pass": true,
+      "returncode": 0,
+      "stdout": "1\n",
+      "stderr": ""
+    },
+    {
+      "name": "integer_oracle_23",
+      "pass": true,
+      "returncode": 0,
+      "stdout": "-1\n",
+      "stderr": ""
+    },
+    {
+      "name": "integer_oracle_24",
+      "pass": true,
+      "returncode": 11,
+      "stdout": "",
+      "stderr": "E11 line 1: Integer arithmetic overflow\n"
+    },
+    {
+      "name": "integer_oracle_25",
+      "pass": true,
+      "returncode": 0,
+      "stdout": "0\n",
+      "stderr": ""
+    },
+    {
+      "name": "integer_oracle_26",
+      "pass": true,
+      "returncode": 0,
+      "stdout": "0\n",
+      "stderr": ""
+    },
+    {
+      "name": "integer_oracle_27",
+      "pass": true,
+      "returncode": 0,
+      "stdout": "0\n",
+      "stderr": ""
+    },
+    {
+      "name": "integer_oracle_28",
+      "pass": true,
+      "returncode": 0,
+      "stdout": "0\n",
+      "stderr": ""
+    },
+    {
+      "name": "integer_oracle_29",
+      "pass": true,
+      "returncode": 0,
+      "stdout": "0\n",
+      "stderr": ""
+    },
+    {
+      "name": "integer_oracle_30",
+      "pass": true,
+      "returncode": 0,
+      "stdout": "1\n",
+      "stderr": ""
+    },
+    {
+      "name": "integer_oracle_31",
+      "pass": true,
+      "returncode": 0,
+      "stdout": "-2\n",
+      "stderr": ""
+    },
+    {
+      "name": "integer_oracle_32",
+      "pass": true,
+      "returncode": 0,
+      "stdout": "0\n",
+      "stderr": ""
+    },
+    {
+      "name": "integer_oracle_33",
+      "pass": true,
+      "returncode": 0,
+      "stdout": "0\n",
+      "stderr": ""
+    },
+    {
+      "name": "integer_oracle_34",
+      "pass": true,
+      "returncode": 11,
+      "stdout": "",
+      "stderr": "E11 line 1: Integer arithmetic overflow\n"
+    },
+    {
+      "name": "integer_oracle_35",
+      "pass": true,
+      "returncode": 11,
+      "stdout": "",
+      "stderr": "E11 line 1: Integer arithmetic overflow\n"
+    },
+    {
+      "name": "integer_oracle_36",
+      "pass": true,
+      "returncode": 0,
+      "stdout": "0\n",
+      "stderr": ""
+    },
+    {
+      "name": "integer_oracle_37",
+      "pass": true,
+      "returncode": 0,
+      "stdout": "1\n",
+      "stderr": ""
+    },
+    {
+      "name": "integer_oracle_38",
+      "pass": true,
+      "returncode": 0,
+      "stdout": "0\n",
+      "stderr": ""
+    },
+    {
+      "name": "integer_oracle_39",
+      "pass": true,
+      "returncode": 0,
+      "stdout": "2147483646\n",
+      "stderr": ""
+    },
+    {
+      "name": "integer_oracle_40",
+      "pass": true,
+      "returncode": 0,
+      "stdout": "1\n",
+      "stderr": ""
+    },
+    {
+      "name": "integer_oracle_41",
+      "pass": true,
+      "returncode": 0,
+      "stdout": "0\n",
+      "stderr": ""
+    },
+    {
+      "name": "integer_oracle_42",
+      "pass": true,
+      "returncode": 11,
+      "stdout": "",
+      "stderr": "E11 line 1: Integer arithmetic overflow\n"
+    },
+    {
+      "name": "integer_oracle_43",
+      "pass": true,
+      "returncode": 0,
+      "stdout": "1\n",
+      "stderr": ""
+    },
+    {
+      "name": "integer_oracle_44",
+      "pass": true,
+      "returncode": 11,
+      "stdout": "",
+      "stderr": "E11 line 1: Integer arithmetic overflow\n"
+    },
+    {
+      "name": "integer_oracle_45",
+      "pass": true,
+      "returncode": 0,
+      "stdout": "0\n",
+      "stderr": ""
+    },
+    {
+      "name": "integer_oracle_46",
+      "pass": true,
+      "returncode": 11,
+      "stdout": "",
+      "stderr": "E11 line 1: Integer arithmetic overflow\n"
+    },
+    {
+      "name": "integer_oracle_47",
+      "pass": true,
+      "returncode": 0,
+      "stdout": "1\n",
+      "stderr": ""
+    },
+    {
+      "name": "integer_oracle_48",
+      "pass": true,
+      "returncode": 0,
+      "stdout": "1\n",
+      "stderr": ""
+    },
+    {
+      "name": "integer_oracle_49",
+      "pass": true,
+      "returncode": 11,
+      "stdout": "",
+      "stderr": "E11 line 1: Integer arithmetic overflow\n"
+    },
+    {
+      "name": "integer_oracle_50",
+      "pass": true,
+      "returncode": 0,
+      "stdout": "1\n",
+      "stderr": ""
+    },
+    {
+      "name": "integer_oracle_51",
+      "pass": true,
+      "returncode": 0,
+      "stdout": "1\n",
+      "stderr": ""
+    },
+    {
+      "name": "integer_oracle_52",
+      "pass": true,
+      "returncode": 0,
+      "stdout": "1\n",
+      "stderr": ""
+    },
+    {
+      "name": "integer_oracle_53",
+      "pass": true,
+      "returncode": 0,
+      "stdout": "0\n",
+      "stderr": ""
+    },
+    {
+      "name": "integer_oracle_54",
+      "pass": true,
+      "returncode": 11,
+      "stdout": "",
+      "stderr": "E11 line 1: Integer arithmetic overflow\n"
+    },
+    {
+      "name": "integer_oracle_55",
+      "pass": true,
+      "returncode": 0,
+      "stdout": "0\n",
+      "stderr": ""
+    },
+    {
+      "name": "integer_oracle_56",
+      "pass": true,
+      "returncode": 0,
+      "stdout": "0\n",
+      "stderr": ""
+    },
+    {
+      "name": "integer_oracle_57",
+      "pass": true,
+      "returncode": 0,
+      "stdout": "0\n",
+      "stderr": ""
+    },
+    {
+      "name": "integer_oracle_58",
+      "pass": true,
+      "returncode": 0,
+      "stdout": "0\n",
+      "stderr": ""
+    },
+    {
+      "name": "integer_oracle_59",
+      "pass": true,
+      "returncode": 0,
+      "stdout": "0\n",
+      "stderr": ""
+    },
+    {
+      "name": "integer_oracle_60",
+      "pass": true,
+      "returncode": 0,
+      "stdout": "1\n",
+      "stderr": ""
+    },
+    {
+      "name": "integer_oracle_61",
+      "pass": true,
+      "returncode": 0,
+      "stdout": "0\n",
+      "stderr": ""
+    },
+    {
+      "name": "integer_oracle_62",
+      "pass": true,
+      "returncode": 0,
+      "stdout": "0\n",
+      "stderr": ""
+    },
+    {
+      "name": "integer_oracle_63",
+      "pass": true,
+      "returncode": 0,
+      "stdout": "46341\n",
+      "stderr": ""
+    },
+    {
+      "name": "integer_oracle_64",
+      "pass": true,
+      "returncode": 0,
+      "stdout": "0\n",
+      "stderr": ""
+    },
+    {
+      "name": "integer_oracle_65",
+      "pass": true,
+      "returncode": 0,
+      "stdout": "2147483647\n",
+      "stderr": ""
+    },
+    {
+      "name": "integer_oracle_66",
+      "pass": true,
+      "returncode": 0,
+      "stdout": "1\n",
+      "stderr": ""
+    },
+    {
+      "name": "integer_oracle_67",
+      "pass": true,
+      "returncode": 0,
+      "stdout": "0\n",
+      "stderr": ""
+    },
+    {
+      "name": "integer_oracle_68",
+      "pass": true,
+      "returncode": 10,
+      "stdout": "",
+      "stderr": "E10 line 1: Division by zero\n"
+    },
+    {
+      "name": "integer_oracle_69",
+      "pass": true,
+      "returncode": 0,
+      "stdout": "2147437306\n",
+      "stderr": ""
+    },
+    {
+      "name": "integer_oracle_70",
+      "pass": true,
+      "returncode": 11,
+      "stdout": "",
+      "stderr": "E11 line 1: Integer arithmetic overflow\n"
+    },
+    {
+      "name": "integer_oracle_71",
+      "pass": true,
+      "returncode": 0,
+      "stdout": "0\n",
+      "stderr": ""
+    },
+    {
+      "name": "integer_oracle_72",
+      "pass": true,
+      "returncode": 0,
+      "stdout": "1834137810\n",
+      "stderr": ""
+    },
+    {
+      "name": "integer_oracle_73",
+      "pass": true,
+      "returncode": 11,
+      "stdout": "",
+      "stderr": "E11 line 1: Integer arithmetic overflow\n"
+    },
+    {
+      "name": "integer_oracle_74",
+      "pass": true,
+      "returncode": 0,
+      "stdout": "323725364\n",
+      "stderr": ""
+    },
+    {
+      "name": "integer_oracle_75",
+      "pass": true,
+      "returncode": 11,
+      "stdout": "",
+      "stderr": "E11 line 1: Integer arithmetic overflow\n"
+    },
+    {
+      "name": "integer_oracle_76",
+      "pass": true,
+      "returncode": 0,
+      "stdout": "-119925131\n",
+      "stderr": ""
+    },
+    {
+      "name": "integer_oracle_77",
+      "pass": true,
+      "returncode": 0,
+      "stdout": "0\n",
+      "stderr": ""
+    },
+    {
+      "name": "integer_oracle_78",
+      "pass": true,
+      "returncode": 0,
+      "stdout": "1384533438\n",
+      "stderr": ""
+    },
+    {
+      "name": "integer_oracle_79",
+      "pass": true,
+      "returncode": 0,
+      "stdout": "1\n",
+      "stderr": ""
+    },
+    {
+      "name": "integer_oracle_80",
+      "pass": true,
+      "returncode": 0,
+      "stdout": "0\n",
+      "stderr": ""
+    },
+    {
+      "name": "integer_oracle_81",
+      "pass": true,
+      "returncode": 0,
+      "stdout": "1\n",
+      "stderr": ""
+    },
+    {
+      "name": "integer_oracle_82",
+      "pass": true,
+      "returncode": 0,
+      "stdout": "1\n",
+      "stderr": ""
+    },
+    {
+      "name": "integer_oracle_83",
+      "pass": true,
+      "returncode": 0,
+      "stdout": "0\n",
+      "stderr": ""
+    },
+    {
+      "name": "integer_oracle_84",
+      "pass": true,
+      "returncode": 0,
+      "stdout": "-604684735\n",
+      "stderr": ""
+    },
+    {
+      "name": "integer_oracle_85",
+      "pass": true,
+      "returncode": 0,
+      "stdout": "1\n",
+      "stderr": ""
+    },
+    {
+      "name": "integer_oracle_86",
+      "pass": true,
+      "returncode": 0,
+      "stdout": "0\n",
+      "stderr": ""
+    },
+    {
+      "name": "integer_oracle_87",
+      "pass": true,
+      "returncode": 0,
+      "stdout": "0\n",
+      "stderr": ""
+    },
+    {
+      "name": "integer_oracle_88",
+      "pass": true,
+      "returncode": 0,
+      "stdout": "1\n",
+      "stderr": ""
+    },
+    {
+      "name": "integer_oracle_89",
+      "pass": true,
+      "returncode": 0,
+      "stdout": "-2147483646\n",
+      "stderr": ""
+    },
+    {
+      "name": "integer_oracle_90",
+      "pass": true,
+      "returncode": 0,
+      "stdout": "1\n",
+      "stderr": ""
+    },
+    {
+      "name": "integer_oracle_91",
+      "pass": true,
+      "returncode": 0,
+      "stdout": "-2147483646\n",
+      "stderr": ""
+    },
+    {
+      "name": "integer_oracle_92",
+      "pass": true,
+      "returncode": 0,
+      "stdout": "1\n",
+      "stderr": ""
+    },
+    {
+      "name": "integer_oracle_93",
+      "pass": true,
+      "returncode": 0,
+      "stdout": "-1\n",
+      "stderr": ""
+    },
+    {
+      "name": "integer_oracle_94",
+      "pass": true,
+      "returncode": 0,
+      "stdout": "-1062494211\n",
+      "stderr": ""
+    },
+    {
+      "name": "integer_oracle_95",
+      "pass": true,
+      "returncode": 0,
+      "stdout": "0\n",
+      "stderr": ""
+    },
+    {
+      "name": "integer_oracle_96",
+      "pass": true,
+      "returncode": 0,
+      "stdout": "1\n",
+      "stderr": ""
+    },
+    {
+      "name": "integer_oracle_97",
+      "pass": true,
+      "returncode": 0,
+      "stdout": "1\n",
+      "stderr": ""
+    },
+    {
+      "name": "integer_oracle_98",
+      "pass": true,
+      "returncode": 0,
+      "stdout": "1\n",
+      "stderr": ""
+    },
+    {
+      "name": "integer_oracle_99",
+      "pass": true,
+      "returncode": 0,
+      "stdout": "1\n",
+      "stderr": ""
+    },
+    {
+      "name": "integer_oracle_100",
+      "pass": true,
+      "returncode": 0,
+      "stdout": "0\n",
+      "stderr": ""
+    },
+    {
+      "name": "integer_oracle_101",
+      "pass": true,
+      "returncode": 0,
+      "stdout": "1\n",
+      "stderr": ""
+    },
+    {
+      "name": "integer_oracle_102",
+      "pass": true,
+      "returncode": 0,
+      "stdout": "0\n",
+      "stderr": ""
+    },
+    {
+      "name": "integer_oracle_103",
+      "pass": true,
+      "returncode": 10,
+      "stdout": "",
+      "stderr": "E10 line 1: Division by zero\n"
+    },
+    {
+      "name": "integer_oracle_104",
+      "pass": true,
+      "returncode": 0,
+      "stdout": "1\n",
+      "stderr": ""
+    },
+    {
+      "name": "integer_oracle_105",
+      "pass": true,
+      "returncode": 0,
+      "stdout": "2147483647\n",
+      "stderr": ""
+    },
+    {
+      "name": "integer_oracle_106",
+      "pass": true,
+      "returncode": 0,
+      "stdout": "0\n",
+      "stderr": ""
+    },
+    {
+      "name": "integer_oracle_107",
+      "pass": true,
+      "returncode": 0,
+      "stdout": "0\n",
+      "stderr": ""
+    },
+    {
+      "name": "integer_oracle_108",
+      "pass": true,
+      "returncode": 0,
+      "stdout": "2011779420\n",
+      "stderr": ""
+    },
+    {
+      "name": "integer_oracle_109",
+      "pass": true,
+      "returncode": 0,
+      "stdout": "-1\n",
+      "stderr": ""
+    },
+    {
+      "name": "integer_oracle_110",
+      "pass": true,
+      "returncode": 0,
+      "stdout": "1\n",
+      "stderr": ""
+    },
+    {
+      "name": "integer_oracle_111",
+      "pass": true,
+      "returncode": 0,
+      "stdout": "1\n",
+      "stderr": ""
+    },
+    {
+      "name": "integer_oracle_112",
+      "pass": true,
+      "returncode": 0,
+      "stdout": "0\n",
+      "stderr": ""
+    },
+    {
+      "name": "integer_oracle_113",
+      "pass": true,
+      "returncode": 0,
+      "stdout": "0\n",
+      "stderr": ""
+    },
+    {
+      "name": "integer_oracle_114",
+      "pass": true,
+      "returncode": 0,
+      "stdout": "-1378523137\n",
+      "stderr": ""
+    },
+    {
+      "name": "integer_oracle_115",
+      "pass": true,
+      "returncode": 11,
+      "stdout": "",
+      "stderr": "E11 line 1: Integer arithmetic overflow\n"
+    },
+    {
+      "name": "integer_oracle_116",
+      "pass": true,
+      "returncode": 0,
+      "stdout": "0\n",
+      "stderr": ""
+    },
+    {
+      "name": "integer_oracle_117",
+      "pass": true,
+      "returncode": 0,
+      "stdout": "0\n",
+      "stderr": ""
+    },
+    {
+      "name": "integer_oracle_118",
+      "pass": true,
+      "returncode": 0,
+      "stdout": "266924072\n",
+      "stderr": ""
+    },
+    {
+      "name": "integer_oracle_119",
+      "pass": true,
+      "returncode": 11,
+      "stdout": "",
+      "stderr": "E11 line 1: Integer arithmetic overflow\n"
+    },
+    {
+      "name": "integer_oracle_120",
+      "pass": true,
+      "returncode": 0,
+      "stdout": "-1035477410\n",
+      "stderr": ""
+    },
+    {
+      "name": "integer_oracle_121",
+      "pass": true,
+      "returncode": 11,
+      "stdout": "",
+      "stderr": "E11 line 1: Integer arithmetic overflow\n"
+    },
+    {
+      "name": "integer_oracle_122",
+      "pass": true,
+      "returncode": 0,
+      "stdout": "0\n",
+      "stderr": ""
+    },
+    {
+      "name": "integer_oracle_123",
+      "pass": true,
+      "returncode": 11,
+      "stdout": "",
+      "stderr": "E11 line 1: Integer arithmetic overflow\n"
+    },
+    {
+      "name": "integer_oracle_124",
+      "pass": true,
+      "returncode": 0,
+      "stdout": "-445827105\n",
+      "stderr": ""
+    },
+    {
+      "name": "integer_oracle_125",
+      "pass": true,
+      "returncode": 0,
+      "stdout": "0\n",
+      "stderr": ""
+    },
+    {
+      "name": "integer_oracle_126",
+      "pass": true,
+      "returncode": 0,
+      "stdout": "1\n",
+      "stderr": ""
+    },
+    {
+      "name": "integer_oracle_127",
+      "pass": true,
+      "returncode": 0,
+      "stdout": "0\n",
+      "stderr": ""
+    },
+    {
+      "name": "integer_oracle_128",
+      "pass": true,
+      "returncode": 0,
+      "stdout": "956986664\n",
+      "stderr": ""
+    },
+    {
+      "name": "integer_oracle_129",
+      "pass": true,
+      "returncode": 0,
+      "stdout": "46343\n",
+      "stderr": ""
+    },
+    {
+      "name": "integer_oracle_130",
+      "pass": true,
+      "returncode": 10,
+      "stdout": "",
+      "stderr": "E10 line 1: Division by zero\n"
+    },
+    {
+      "name": "integer_oracle_131",
+      "pass": true,
+      "returncode": 0,
+      "stdout": "2147437307\n",
+      "stderr": ""
+    },
+    {
+      "name": "integer_oracle_132",
+      "pass": true,
+      "returncode": 0,
+      "stdout": "-2026215063\n",
+      "stderr": ""
+    },
+    {
+      "name": "integer_oracle_133",
+      "pass": true,
+      "returncode": 0,
+      "stdout": "0\n",
+      "stderr": ""
+    },
+    {
+      "name": "integer_oracle_134",
+      "pass": true,
+      "returncode": 0,
+      "stdout": "0\n",
+      "stderr": ""
+    },
+    {
+      "name": "integer_oracle_135",
+      "pass": true,
+      "returncode": 0,
+      "stdout": "-2147437307\n",
+      "stderr": ""
+    },
+    {
+      "name": "integer_oracle_136",
+      "pass": true,
+      "returncode": 0,
+      "stdout": "1\n",
+      "stderr": ""
+    },
+    {
+      "name": "integer_oracle_137",
+      "pass": true,
+      "returncode": 0,
+      "stdout": "0\n",
+      "stderr": ""
+    },
+    {
+      "name": "integer_oracle_138",
+      "pass": true,
+      "returncode": 0,
+      "stdout": "1\n",
+      "stderr": ""
+    },
+    {
+      "name": "integer_oracle_139",
+      "pass": true,
+      "returncode": 0,
+      "stdout": "0\n",
+      "stderr": ""
+    },
+    {
+      "name": "integer_oracle_140",
+      "pass": true,
+      "returncode": 0,
+      "stdout": "1\n",
+      "stderr": ""
+    },
+    {
+      "name": "integer_oracle_141",
+      "pass": true,
+      "returncode": 0,
+      "stdout": "0\n",
+      "stderr": ""
+    },
+    {
+      "name": "integer_oracle_142",
+      "pass": true,
+      "returncode": 0,
+      "stdout": "1\n",
+      "stderr": ""
+    },
+    {
+      "name": "integer_oracle_143",
+      "pass": true,
+      "returncode": 0,
+      "stdout": "0\n",
+      "stderr": ""
+    },
+    {
+      "name": "integer_oracle_144",
+      "pass": true,
+      "returncode": 0,
+      "stdout": "1780521384\n",
+      "stderr": ""
+    },
+    {
+      "name": "integer_oracle_145",
+      "pass": true,
+      "returncode": 0,
+      "stdout": "0\n",
+      "stderr": ""
+    },
+    {
+      "name": "integer_oracle_146",
+      "pass": true,
+      "returncode": 0,
+      "stdout": "1616747095\n",
+      "stderr": ""
+    },
+    {
+      "name": "integer_oracle_147",
+      "pass": true,
+      "returncode": 0,
+      "stdout": "46341\n",
+      "stderr": ""
+    },
+    {
+      "name": "integer_oracle_148",
+      "pass": true,
+      "returncode": 0,
+      "stdout": "0\n",
+      "stderr": ""
+    },
+    {
+      "name": "integer_oracle_149",
+      "pass": true,
+      "returncode": 0,
+      "stdout": "2147483646\n",
+      "stderr": ""
+    },
+    {
+      "name": "integer_oracle_150",
+      "pass": true,
+      "returncode": 0,
+      "stdout": "0\n",
+      "stderr": ""
+    },
+    {
+      "name": "integer_oracle_151",
+      "pass": true,
+      "returncode": 0,
+      "stdout": "1\n",
+      "stderr": ""
+    },
+    {
+      "name": "integer_oracle_152",
+      "pass": true,
+      "returncode": 0,
+      "stdout": "0\n",
+      "stderr": ""
+    },
+    {
+      "name": "integer_oracle_153",
+      "pass": true,
+      "returncode": 0,
+      "stdout": "1\n",
+      "stderr": ""
+    },
+    {
+      "name": "integer_oracle_154",
+      "pass": true,
+      "returncode": 0,
+      "stdout": "1\n",
+      "stderr": ""
+    },
+    {
+      "name": "integer_oracle_155",
+      "pass": true,
+      "returncode": 0,
+      "stdout": "0\n",
+      "stderr": ""
+    },
+    {
+      "name": "integer_oracle_156",
+      "pass": true,
+      "returncode": 0,
+      "stdout": "-743094782\n",
+      "stderr": ""
+    },
+    {
+      "name": "integer_oracle_157",
+      "pass": true,
+      "returncode": 0,
+      "stdout": "1\n",
+      "stderr": ""
+    },
+    {
+      "name": "integer_oracle_158",
+      "pass": true,
+      "returncode": 0,
+      "stdout": "0\n",
+      "stderr": ""
+    },
+    {
+      "name": "integer_oracle_159",
+      "pass": true,
+      "returncode": 0,
+      "stdout": "0\n",
+      "stderr": ""
+    }
+  ]
+}
