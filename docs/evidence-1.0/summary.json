@@ -1,0 +1,79 @@
+{
+  "status": "PASS",
+  "profiles": {
+    "debug": {
+      "api": "API PASS: reset, recovery, independent contexts, diagnostics, callbacks, bytecode guards, exact call/data limits, 18000 source fuzz cases; sizeof(SBasic)=8220",
+      "acceptance": "Acceptance: 342/342 PASS",
+      "extended": "BASIC 1.0: 106/106 PASS",
+      "stress": "STRESS PASS: 50000 attempts; seed=0x2468ace1; accepted=39795 rejected=10205 bytecode_mutations=25000; EEPROM faults, recovery and BREAK PASS",
+      "exe_bytes": 164352,
+      "unstripped_bytes": 164352
+    },
+    "sanitized": {
+      "api": "API PASS: reset, recovery, independent contexts, diagnostics, callbacks, bytecode guards, exact call/data limits, 18000 source fuzz cases; sizeof(SBasic)=8220",
+      "acceptance": "Acceptance: 342/342 PASS",
+      "extended": "BASIC 1.0: 106/106 PASS",
+      "stress": "STRESS PASS: 50000 attempts; seed=0x2468ace1; accepted=39795 rejected=10205 bytecode_mutations=25000; EEPROM faults, recovery and BREAK PASS",
+      "exe_bytes": 550912,
+      "unstripped_bytes": 550912
+    },
+    "extended": {
+      "api": "API PASS: reset, recovery, independent contexts, diagnostics, callbacks, bytecode guards, exact call/data limits, 18000 source fuzz cases; sizeof(SBasic)=8220",
+      "acceptance": "Acceptance: 342/342 PASS",
+      "extended": "BASIC 1.0: 106/106 PASS",
+      "stress": "STRESS PASS: 50000 attempts; seed=0x2468ace1; accepted=39795 rejected=10205 bytecode_mutations=25000; EEPROM faults, recovery and BREAK PASS",
+      "exe_bytes": 559616,
+      "unstripped_bytes": 559616
+    },
+    "release": {
+      "api": "API PASS: reset, recovery, independent contexts, diagnostics, callbacks, bytecode guards, exact call/data limits, 18000 source fuzz cases; sizeof(SBasic)=8220",
+      "acceptance": "Acceptance: 342/342 PASS",
+      "extended": "BASIC 1.0: 106/106 PASS",
+      "stress": "STRESS PASS: 50000 attempts; seed=0x2468ace1; accepted=39795 rejected=10205 bytecode_mutations=25000; EEPROM faults, recovery and BREAK PASS",
+      "exe_bytes": 50176,
+      "unstripped_bytes": 214528
+    }
+  },
+  "analysis": {
+    "clang": "PASS: core and Windows adapters, no diagnostics",
+    "clang-tidy": "UNAVAILABLE",
+    "cppcheck": "UNAVAILABLE"
+  },
+  "baseline": {
+    "exe_bytes": 220672,
+    "acceptance": "Acceptance: 342/342 PASS",
+    "extended": "BASIC 1.0: 106/106 PASS"
+  },
+  "avr": {
+    "compiler": "avr-gcc.exe (GCC) 7.3.0\nCopyright (C) 2017 Free Software Foundation, Inc.\nThis is free software; see the source for copying conditions.  There is NO\nwarranty; not even for MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.\n\n",
+    "sections": {
+      ".data": 86,
+      ".text": 42620,
+      ".bss": 9831,
+      ".comment": 17,
+      ".note.gnu.avr.deviceinfo": 64,
+      ".debug_aranges": 320,
+      ".debug_info": 3818,
+      ".debug_abbrev": 2033,
+      ".debug_line": 1654,
+      ".debug_str": 662
+    }
+  },
+  "standalone": "PASS: native x86-64 stripped EXE, PATH contains Windows directories only",
+  "libfuzzer": {
+    "status": "UNAVAILABLE",
+    "reason": "clang: error: unsupported option '-fsanitize=fuzzer' for target 'x86_64-w64-windows-gnu'\n"
+  },
+  "dlls": [
+    "api-ms-win-crt-stdio-l1-1-0.dll",
+    "api-ms-win-crt-runtime-l1-1-0.dll",
+    "api-ms-win-crt-locale-l1-1-0.dll",
+    "api-ms-win-crt-heap-l1-1-0.dll",
+    "api-ms-win-crt-private-l1-1-0.dll",
+    "api-ms-win-crt-string-l1-1-0.dll",
+    "api-ms-win-crt-convert-l1-1-0.dll",
+    "KERNEL32.dll",
+    "api-ms-win-crt-math-l1-1-0.dll",
+    "api-ms-win-crt-environment-l1-1-0.dll"
+  ]
+}

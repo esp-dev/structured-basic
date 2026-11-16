@@ -1,5 +1,8 @@
 # Structured BASIC 1.0
 
+The [EBNF grammar](GRAMMAR.md) describes the forms the compiler accepts.
+This page explains their behavior during execution.
+
 Each statement occupies one source line. LF and CRLF work. Keywords and
 names are ASCII case insensitive. Names contain up to 31 characters,
 begin with a letter or underscore and may end in `$`. `REM` and apostrophe
@@ -14,16 +17,18 @@ stores bytes, including NUL when constructed with `CHR$(0)`. Use double
 quotes for string literals and double a quote inside a literal. The default
 string limit is 255 bytes. An identifier ending in `$` defaults to STRING.
 
-`[LET] name = expression` writes a scalar. A main-level assignment declares
-a global if necessary. Inside a routine an assignment resolves to a
-parameter, local or declared global. Locals and parameters shadow globals.
-`LOCAL name [AS type]` declares function-scoped cells initialized on entry.
-`DIM name [AS type]` declares a scalar. `DIM name(count) [AS type]` allocates a
-zero-initialized one-dimensional array at execution. Main-level DIM is global.
-DIM inside a routine is local. Reexecuting DIM replaces the allocation. Index
-from zero through count minus one. Bounds, allocation and type errors abort
-the current run. A `CONST name [AS type] = expression` at main level initializes
-an immutable scalar when execution reaches the declaration.
+`[LET] name = expression` writes a scalar. An index on the target writes an
+array element. A main-level scalar assignment, FOR counter or INPUT target can
+introduce a global. Inside a routine, variables resolve to parameters, locals
+or declared globals. Locals and parameters shadow globals.
+`LOCAL name [AS type]` declares a routine-scoped scalar initialized on entry.
+Both LOCAL and DIM accept comma-separated declarations. Adding
+`(count)` after a name allocates a zero-initialized one-dimensional array
+when execution reaches the declaration. DIM at main level is global and DIM
+inside a routine is local. Reexecuting an array declaration replaces its
+allocation. Index from zero through count minus one. Bounds, allocation and
+type errors abort the current run. A top-level `CONST name [AS type] =
+expression` initializes an immutable scalar when it executes.
 
 INTEGER promotes to SINGLE in mixed arithmetic and SINGLE assignments.
 Use `CINT` or `INT` explicitly in the opposite direction. Array indices,
@@ -31,9 +36,10 @@ sizes and FOR control values require INTEGER. STRING and numeric values
 require explicit conversions. Addition concatenates strings. Comparisons
 of strings use unsigned byte lexicographic order.
 
-Operators, from tightest to loosest, are unary sign, `* / MOD`, `+ -`,
+Operators, from tightest to loosest, are unary minus, `* / MOD`, `+ -`,
 comparisons `= <> < <= > >=`, `NOT`, `AND`, and `OR`. Binary operators within
-one priority associate left to right. AND and OR short circuit. Zero is
+one priority associate left to right. The parser discards unary plus.
+AND and OR short circuit. Zero is
 false and a nonzero number is true. Logical and comparison results are
 INTEGER zero or one. INTEGER division truncates toward zero, and MOD has
 the dividend's sign. Floating MOD is a type error. Arithmetic overflow,
@@ -44,18 +50,18 @@ division by zero and invalid conversions return errors.
 | Form | Behavior |
 | --- | --- |
 | `PRINT [item [; item or , item]…]` | Print values. A semicolon joins fields, a comma inserts a space and a trailing separator suppresses the newline. |
-| `INPUT ["prompt";] target[, target…]` | Read one line per scalar target using its declared type. |
+| `INPUT ["prompt";] target[, target…]` | Display the optional literal prompt, then read one line per scalar target using its declared type. |
 | `IF expr THEN`, `ELSEIF expr THEN`, `ELSE`, `END IF` | Execute the first true clause or the optional fallback. |
-| `SELECT CASE expr`, `CASE expr[, expr…]`, `CASE ELSE`, `END SELECT` | Evaluate the selector once. Execute the first matching clause or fallback. |
+| `SELECT CASE expr`, `CASE expr[, expr…]`, `CASE ELSE`, `END SELECT` | Evaluate the selector once. Evaluate all entries of each reached CASE list and execute the first matching clause or fallback. |
 | `WHILE expr`, `WEND` | Test before each iteration. |
 | `FOR var = start TO limit [STEP step]`, `NEXT [var]` | Evaluate bounds and step once. The step defaults to 1 and cannot be zero. Supports either sign. Iteration stops at the boundary, including when advancing would exceed INTEGER range. |
 | `DO [WHILE expr or UNTIL expr]`, `LOOP [WHILE expr or UNTIL expr]` | Test at the start or end, or repeat until exited. Use at most one test. |
 | `REPEAT`, `UNTIL expr` | Test at the end and repeat while false. |
-| `EXIT FOR`, `EXIT DO`, `EXIT WHILE` | Leave the nearest enclosing loop of the named kind. |
+| `EXIT FOR`, `EXIT DO`, `EXIT WHILE` | Leave the nearest enclosing loop of the named kind. EXIT DO also exits REPEAT. |
 | `END`, `STOP` | End execution successfully. |
 
 `FUNCTION name(arg [AS type], …) [AS type]` and
-`SUB name(arg [AS type], …)` define top-level routines closed by
+`SUB name(arg [AS type], …) [AS INTEGER]` define top-level routines closed by
 `END FUNCTION` and `END SUB`. Functions take `RETURN expression`,
 produce a typed value, and default to zero or empty text on fallthrough.
 SUB accepts bare `RETURN` or fallthrough. Call routines as `CALL name(…)`

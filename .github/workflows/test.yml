@@ -1,0 +1,55 @@
+name: Core tests
+
+on:
+  push:
+  pull_request:
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  linux:
+    name: Linux / ASan and UBSan
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v4
+      - name: Configure
+        run: cmake -S . -B build/ci -G Ninja -DCMAKE_C_COMPILER=clang -DSB_PROFILE=SANITIZED
+      - name: Build
+        run: cmake --build build/ci
+      - name: Test
+        run: ctest --test-dir build/ci --output-on-failure
+
+  windows:
+    name: Windows CLANG64 / ${{ matrix.profile }}
+    runs-on: windows-latest
+    timeout-minutes: 25
+    strategy:
+      fail-fast: false
+      matrix:
+        profile: [EXTENDED, RELEASE]
+    defaults:
+      run:
+        shell: msys2 {0}
+    steps:
+      - uses: actions/checkout@v4
+      - uses: msys2/setup-msys2@v2
+        with:
+          msystem: CLANG64
+          update: true
+          install: >-
+            mingw-w64-clang-x86_64-clang
+            mingw-w64-clang-x86_64-compiler-rt
+            mingw-w64-clang-x86_64-lld
+            mingw-w64-clang-x86_64-llvm
+            mingw-w64-clang-x86_64-cmake
+            mingw-w64-clang-x86_64-ninja
+            mingw-w64-clang-x86_64-python
+      - name: Configure
+        run: cmake -S . -B build/ci -G Ninja -DCMAKE_C_COMPILER=clang -DSB_PROFILE=${{ matrix.profile }}
+      - name: Build
+        run: cmake --build build/ci
+      - name: Test
+        run: ctest --test-dir build/ci --output-on-failure

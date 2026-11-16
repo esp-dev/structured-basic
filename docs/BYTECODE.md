@@ -1,13 +1,11 @@
-# Private bytecode and symbol encoding
+# BASIC 1.0 private bytecode and symbols
 
-This page records stage one. See [the BASIC 1.0 additions](BYTECODE-1.0.md)
-for the current symbol flags and additional opcodes.
-
-All fields are byte encoded, little endian. Addresses are absolute u16 arena
-offsets, independent of host pointers. Code occupies `[code_start, program_end)`.
-The compiler appends HALT even when the source has no END. Each nonblank source
-statement emits LINE before its actual operation. Metadata and bytecode remain
-in the same pool during execution. No bytecode file importer is provided.
+Integer and offset fields use little-endian byte encoding. SINGLE immediates
+use the native binary32 byte order of the compiler and VM. Addresses are
+absolute u16 arena offsets. Code occupies `[code_start, program_end)`. The
+compiler appends HALT even when the source has no END and emits LINE
+instructions for diagnostics. Metadata, code and runtime data share the
+arena. Bytecode stays private to the interpreter instance.
 
 | Opcode | Name | Immediate bytes | Stack effect / behavior |
 | ---: | --- | --- | --- |
@@ -34,15 +32,39 @@ in the same pool during execution. No bytecode file importer is provided.
 | 20 | JZ | target:u16 | Pop condition; jump if zero |
 | 21 | CALL | function_symbol:u16, argc:u8 | Consume args, enter frame; return one value |
 | 22 | RETURN | none | Require one result; release frame, restore caller, push result |
-| 23 | PRINT | none | Pop value and invoke output callback |
+| 23 | PRINT | none | Pop value and print it with a newline |
+| 24 | FCONST | value:binary32 | Push a SINGLE |
+| 25 | SCONST | length:u16, followed by length bytes | Push a STRING |
+| 26 | ARRAY_GET | symbol:u16 | Pop an index and push the element |
+| 27 | ARRAY_SET | symbol:u16 | Pop value and index, then store the element |
+| 28 | DIM | symbol:u16 | Pop count and allocate or replace an array |
+| 29 | BUILTIN | id:u8, argc:u8 | Consume arguments and push the result |
+| 30 | DROP | none | Pop and release one value |
+| 31 | WRITE | none | Pop value and print it |
+| 32 | NEWLINE | none | Print a newline |
+| 33 | SEPARATOR | none | Print a space |
+| 34 | NOT | none | Pop a condition and push the negated truth value |
+| 35 | BOOL | none | Pop a condition and push 0 or 1 |
+| 36 | AND | none | Combine two already evaluated operands |
+| 37 | OR | none | Combine two already evaluated operands |
+| 38 | DUP | none | Duplicate the top operand |
+| 39 | INPUT | symbol:u16 | Read and store a value via the input callback |
+| 40 | FOR | counter_symbol:u16, exit:u16 | Pop step, limit and start, then enter or skip the loop |
+| 41 | NEXT | none | Advance the active FOR or release its control record |
+| 42 | SELECT | none | Pop and retain the selector in a control record |
+| 43 | CASE | none | Compare a popped value against the selector and push 0 or 1 |
+| 44 | ENDSELECT | none | Release the SELECT control record |
+| 45 | JNZ | target:u16 | Pop condition and jump if nonzero |
+| 46 | EXIT | control_count:u8, target:u16 | Unwind control records and jump |
 
 For `PRINT 2 + 3 * 4` on source line 1, the operations are
 `LINE 1; CONST 2; CONST 3; CONST 4; MUL; ADD; PRINT; HALT`.
-Calls evaluate arguments in source order and emit CALL only after all arguments.
-Functions are surrounded by a main-execution JUMP over their body. Their symbol
-entry points are patched during pass two; forward and recursive calls use the
-same symbol offset and need no runtime name lookup. Function fallthrough emits
-`CONST 0; RETURN`.
+Calls evaluate arguments in source order. A JUMP skips a routine's body
+during main execution, and the compiler records the entry point in the
+routine symbol. Fallthrough returns numeric zero or the empty string.
+RETURN releases locals and active control records before restoring the caller.
+Expression AND and OR are compiled to conditional jumps to short-circuit the
+right-hand side. A multi-item CASE uses BC_OR to combine evaluated comparisons.
 
 Symbol records are contiguous and use 11+name_length bytes:
 
@@ -54,24 +76,17 @@ Symbol records are contiguous and use 11+name_length bytes:
 | 4 | u8 | Global or local slot |
 | 5 | u8 | Function parameter count |
 | 6 | u8 | Function total local-slot count, including parameters |
-| 7 | u8 | Reserved zero |
+| 7 | u8 | Type and flags |
 | 8 | u16 | Function bytecode entry |
 | 10 | bytes | Uppercase ASCII name followed by NUL |
 
+The low two bits of byte 7 are INTEGER (0), SINGLE (1) or STRING (2).
+The remaining flags are ARRAY (4), CONST (8), SUB (16) and DECLARED (32).
 Record traversal uses its stored name length. Parameters are local symbols
 allocated before LOCAL symbols, with slots in declaration order. Nonapplicable
 record fields are zero. Symbol records are immutable after successful compilation.
 
-Error codes are stable for this first stage: 0 OK, 1 syntax, 2 identifier length,
-3 literal range, 4 undeclared symbol, 5 duplicate declaration, 6 arity,
-7 pool memory, 8 compiler limit, 9 VM stack, 10 division by zero,
-11 arithmetic overflow, 12 invalid bytecode, 13 instruction budget,
-14 output callback, 15 no compiled program. The host CLI prints
-`E<code> line <line>: <English diagnostic>` to stderr and exits with that code.
-Host file/usage failures use 66/64. There is no result output before a compilation
-error; a runtime error can follow already completed PRINT callbacks.
-
-Runtime checks detect invalid/truncated operands and invalid slot/target ranges.
-They are defensive checks on compiler output, not a complete proof for arbitrary
-mutated byte streams. Applications must not treat SBasic.pool as an untrusted
-executable import format.
+The current error codes are declared in [sbasic.h](../include/sbasic.h).
+The validator checks structure and ranges for compiler-produced bytecode.
+Keep `SBasic.pool` private. It is an execution arena rather than a serialized
+file format.

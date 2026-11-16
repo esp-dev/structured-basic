@@ -29,6 +29,6 @@ clang-tidy and cppcheck were unavailable. AVR verification used avr-gcc
 validator 1056 bytes and terminal 420 bytes. See the stack report for
 its call-path assumptions. The physical AVR was not used.
 
-The first-stage documentation and report remain useful as historical
-evidence. The `docs/evidence-1.0/` reports contain reproducible command
-and result summaries for the verified revision.
+The [verification summaries](evidence-1.0/) cover the verified revision.
+Build and test commands are in [BUILD.md](BUILD.md). Original Stage 1
+documentation and logs are preserved in Git at `87601c8`.

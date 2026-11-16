@@ -1,9 +1,0 @@
-internal.h:32:23:sb_fail	4	static
-vm.c:31:12:need	2	static
-vm.c:44:13:peaks	2	static
-vm.c:63:12:jump	2	static
-vm.c:56:12:pop	4	static
-vm.c:50:12:push	4	static
-vm.c:3:6:sb_init	2	static
-vm.c:5:13:sb_error_message	2	static
-vm.c:102:9:sb_run	62	static
