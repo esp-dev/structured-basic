@@ -6,7 +6,10 @@ extended sanitizer and LTO Release builds along with the AVR firmware and
 reports. Run `python tools/stack_report.py` for the AVR stack estimate.
 
 The Windows release uses `-Os`, `-flto`, function and data sections and linker
-garbage collection. A separate unstripped executable remains available.
+garbage collection. The release executable uses `--strip-all` to remove
+symbols and debug sections. Its Windows icon and version information stay
+embedded.
+A separate unstripped executable remains available for diagnostics.
 The runner measures a baseline without LTO, GC or stripping and records a
 separate GC comparison. The shipped EXE is tested outside MSYS2 PATH.
 
