@@ -1,5 +1,8 @@
 # Private bytecode and symbol encoding
 
+This page records stage one. See [the BASIC 1.0 additions](BYTECODE-1.0.md)
+for the current symbol flags and additional opcodes.
+
 All fields are byte encoded, little endian. Addresses are absolute u16 arena
 offsets, independent of host pointers. Code occupies `[code_start, program_end)`.
 The compiler appends HALT even when the source has no END. Each nonblank source

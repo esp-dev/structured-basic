@@ -1,0 +1,1009 @@
+{
+  "frames": [
+    {
+      "file": "avr.su",
+      "function": "uart_byte",
+      "bytes": 2,
+      "kind": "static"
+    },
+    {
+      "file": "avr.su",
+      "function": "output",
+      "bytes": 8,
+      "kind": "static"
+    },
+    {
+      "file": "avr.su",
+      "function": "poll",
+      "bytes": 2,
+      "kind": "static"
+    },
+    {
+      "file": "avr.su",
+      "function": "input",
+      "bytes": 10,
+      "kind": "static"
+    },
+    {
+      "file": "avr.su",
+      "function": "reg",
+      "bytes": 2,
+      "kind": "static"
+    },
+    {
+      "file": "avr.su",
+      "function": "nvwrite",
+      "bytes": 8,
+      "kind": "static"
+    },
+    {
+      "file": "avr.su",
+      "function": "nvread",
+      "bytes": 8,
+      "kind": "static"
+    },
+    {
+      "file": "avr.su",
+      "function": "device",
+      "bytes": 20,
+      "kind": "static"
+    },
+    {
+      "file": "avr.su",
+      "function": "__vector_16",
+      "bytes": 9,
+      "kind": "static"
+    },
+    {
+      "file": "avr.su",
+      "function": "main",
+      "bytes": 48,
+      "kind": "static"
+    },
+    {
+      "file": "builtins.su",
+      "function": "sb_builtin_id",
+      "bytes": 4,
+      "kind": "static"
+    },
+    {
+      "file": "builtins.su",
+      "function": "sb_builtin_arity",
+      "bytes": 2,
+      "kind": "static"
+    },
+    {
+      "file": "builtins.su",
+      "function": "sb_builtin",
+      "bytes": 280,
+      "kind": "static"
+    },
+    {
+      "file": "compiler.su",
+      "function": "sb_fail",
+      "bytes": 4,
+      "kind": "static"
+    },
+    {
+      "file": "compiler.su",
+      "function": "peek",
+      "bytes": 4,
+      "kind": "static"
+    },
+    {
+      "file": "compiler.su",
+      "function": "is_name",
+      "bytes": 2,
+      "kind": "static"
+    },
+    {
+      "file": "compiler.su",
+      "function": "statement_token",
+      "bytes": 10,
+      "kind": "static"
+    },
+    {
+      "file": "compiler.su",
+      "function": "emit.isra.1",
+      "bytes": 2,
+      "kind": "static"
+    },
+    {
+      "file": "compiler.su",
+      "function": "word",
+      "bytes": 5,
+      "kind": "static"
+    },
+    {
+      "file": "compiler.su",
+      "function": "constant",
+      "bytes": 9,
+      "kind": "static"
+    },
+    {
+      "file": "compiler.su",
+      "function": "text_constant",
+      "bytes": 10,
+      "kind": "static"
+    },
+    {
+      "file": "compiler.su",
+      "function": "branch",
+      "bytes": 8,
+      "kind": "static"
+    },
+    {
+      "file": "compiler.su",
+      "function": "patch.isra.2",
+      "bytes": 2,
+      "kind": "static"
+    },
+    {
+      "file": "compiler.su",
+      "function": "emit_operator",
+      "bytes": 6,
+      "kind": "static"
+    },
+    {
+      "file": "compiler.su",
+      "function": "access_variable.isra.3",
+      "bytes": 6,
+      "kind": "static"
+    },
+    {
+      "file": "compiler.su",
+      "function": "precedence",
+      "bytes": 2,
+      "kind": "static"
+    },
+    {
+      "file": "compiler.su",
+      "function": "operator_push",
+      "bytes": 2,
+      "kind": "static"
+    },
+    {
+      "file": "compiler.su",
+      "function": "block_push",
+      "bytes": 4,
+      "kind": "static"
+    },
+    {
+      "file": "compiler.su",
+      "function": "block_top",
+      "bytes": 2,
+      "kind": "static"
+    },
+    {
+      "file": "compiler.su",
+      "function": "patch_chain.isra.9",
+      "bytes": 8,
+      "kind": "static"
+    },
+    {
+      "file": "compiler.su",
+      "function": "loop_close",
+      "bytes": 6,
+      "kind": "static"
+    },
+    {
+      "file": "compiler.su",
+      "function": "writable.isra.10",
+      "bytes": 2,
+      "kind": "static"
+    },
+    {
+      "file": "compiler.su",
+      "function": "find.isra.13",
+      "bytes": 15,
+      "kind": "static"
+    },
+    {
+      "file": "compiler.su",
+      "function": "lookup_variable",
+      "bytes": 6,
+      "kind": "static"
+    },
+    {
+      "file": "compiler.su",
+      "function": "add.isra.16",
+      "bytes": 20,
+      "kind": "static"
+    },
+    {
+      "file": "compiler.su",
+      "function": "line_end",
+      "bytes": 2,
+      "kind": "static"
+    },
+    {
+      "file": "compiler.su",
+      "function": "variable",
+      "bytes": 6,
+      "kind": "static"
+    },
+    {
+      "file": "compiler.su",
+      "function": "lex_next",
+      "bytes": 23,
+      "kind": "static"
+    },
+    {
+      "file": "compiler.su",
+      "function": "accept",
+      "bytes": 2,
+      "kind": "static"
+    },
+    {
+      "file": "compiler.su",
+      "function": "parse_type",
+      "bytes": 5,
+      "kind": "static"
+    },
+    {
+      "file": "compiler.su",
+      "function": "declare",
+      "bytes": 47,
+      "kind": "static"
+    },
+    {
+      "file": "compiler.su",
+      "function": "expect",
+      "bytes": 6,
+      "kind": "static"
+    },
+    {
+      "file": "compiler.su",
+      "function": "expression",
+      "bytes": 57,
+      "kind": "static"
+    },
+    {
+      "file": "compiler.su",
+      "function": "call_statement",
+      "bytes": 6,
+      "kind": "static"
+    },
+    {
+      "file": "compiler.su",
+      "function": "sb_compile",
+      "bytes": 1129,
+      "kind": "static"
+    },
+    {
+      "file": "errors.su",
+      "function": "sb_init",
+      "bytes": 2,
+      "kind": "static"
+    },
+    {
+      "file": "errors.su",
+      "function": "sb_error_message",
+      "bytes": 2,
+      "kind": "static"
+    },
+    {
+      "file": "heap.su",
+      "function": "sb_fail",
+      "bytes": 4,
+      "kind": "static"
+    },
+    {
+      "file": "heap.su",
+      "function": "valid_object",
+      "bytes": 2,
+      "kind": "static"
+    },
+    {
+      "file": "heap.su",
+      "function": "sb_int",
+      "bytes": 9,
+      "kind": "static"
+    },
+    {
+      "file": "heap.su",
+      "function": "sb_float",
+      "bytes": 9,
+      "kind": "static"
+    },
+    {
+      "file": "heap.su",
+      "function": "sb_zero",
+      "bytes": 9,
+      "kind": "static"
+    },
+    {
+      "file": "heap.su",
+      "function": "sb_value_get",
+      "bytes": 14,
+      "kind": "static"
+    },
+    {
+      "file": "heap.su",
+      "function": "sb_value_put",
+      "bytes": 9,
+      "kind": "static"
+    },
+    {
+      "file": "heap.su",
+      "function": "sb_retain",
+      "bytes": 13,
+      "kind": "static"
+    },
+    {
+      "file": "heap.su",
+      "function": "sb_release",
+      "bytes": 21,
+      "kind": "static"
+    },
+    {
+      "file": "heap.su",
+      "function": "sb_object",
+      "bytes": 9,
+      "kind": "static"
+    },
+    {
+      "file": "heap.su",
+      "function": "sb_string",
+      "bytes": 22,
+      "kind": "static"
+    },
+    {
+      "file": "heap.su",
+      "function": "sb_length",
+      "bytes": 13,
+      "kind": "static"
+    },
+    {
+      "file": "heap.su",
+      "function": "sb_bytes",
+      "bytes": 9,
+      "kind": "static"
+    },
+    {
+      "file": "heap.su",
+      "function": "sb_convert",
+      "bytes": 5,
+      "kind": "static"
+    },
+    {
+      "file": "heap.su",
+      "function": "sb_truth",
+      "bytes": 11,
+      "kind": "static"
+    },
+    {
+      "file": "heap.su",
+      "function": "sb_slot_symbol",
+      "bytes": 6,
+      "kind": "static"
+    },
+    {
+      "file": "storage.su",
+      "function": "sb_save",
+      "bytes": 43,
+      "kind": "static"
+    },
+    {
+      "file": "storage.su",
+      "function": "sb_load",
+      "bytes": 29,
+      "kind": "static"
+    },
+    {
+      "file": "terminal.su",
+      "function": "read_source",
+      "bytes": 2,
+      "kind": "static"
+    },
+    {
+      "file": "terminal.su",
+      "function": "command",
+      "bytes": 2,
+      "kind": "static"
+    },
+    {
+      "file": "terminal.su",
+      "function": "sb_diagnostic",
+      "bytes": 118,
+      "kind": "dynamic,bounded"
+    },
+    {
+      "file": "terminal.su",
+      "function": "sb_terminal",
+      "bytes": 420,
+      "kind": "static"
+    },
+    {
+      "file": "validate.su",
+      "function": "sb_fail",
+      "bytes": 4,
+      "kind": "static"
+    },
+    {
+      "file": "validate.su",
+      "function": "width",
+      "bytes": 2,
+      "kind": "static"
+    },
+    {
+      "file": "validate.su",
+      "function": "marked",
+      "bytes": 2,
+      "kind": "static"
+    },
+    {
+      "file": "validate.su",
+      "function": "sb_validate",
+      "bytes": 1056,
+      "kind": "static"
+    },
+    {
+      "file": "value.su",
+      "function": "integer_math",
+      "bytes": 16,
+      "kind": "static"
+    },
+    {
+      "file": "value.su",
+      "function": "sb_integer_text",
+      "bytes": 20,
+      "kind": "static"
+    },
+    {
+      "file": "value.su",
+      "function": "sb_format",
+      "bytes": 21,
+      "kind": "dynamic,bounded"
+    },
+    {
+      "file": "value.su",
+      "function": "sb_parse",
+      "bytes": 12,
+      "kind": "static"
+    },
+    {
+      "file": "value.su",
+      "function": "sb_math",
+      "bytes": 30,
+      "kind": "static"
+    },
+    {
+      "file": "vm.su",
+      "function": "get32",
+      "bytes": 2,
+      "kind": "static"
+    },
+    {
+      "file": "vm.su",
+      "function": "sb_fail",
+      "bytes": 4,
+      "kind": "static"
+    },
+    {
+      "file": "vm.su",
+      "function": "jump",
+      "bytes": 2,
+      "kind": "static"
+    },
+    {
+      "file": "vm.su",
+      "function": "cell",
+      "bytes": 4,
+      "kind": "static"
+    },
+    {
+      "file": "vm.su",
+      "function": "control_pop",
+      "bytes": 15,
+      "kind": "static"
+    },
+    {
+      "file": "vm.su",
+      "function": "store",
+      "bytes": 21,
+      "kind": "static"
+    },
+    {
+      "file": "vm.su",
+      "function": "write_bytes",
+      "bytes": 4,
+      "kind": "static"
+    },
+    {
+      "file": "vm.su",
+      "function": "sb_room",
+      "bytes": 2,
+      "kind": "static"
+    },
+    {
+      "file": "vm.su",
+      "function": "sb_peaks",
+      "bytes": 2,
+      "kind": "static"
+    },
+    {
+      "file": "vm.su",
+      "function": "control_push",
+      "bytes": 7,
+      "kind": "static"
+    },
+    {
+      "file": "vm.su",
+      "function": "sb_poll",
+      "bytes": 4,
+      "kind": "static"
+    },
+    {
+      "file": "vm.su",
+      "function": "sb_push",
+      "bytes": 11,
+      "kind": "static"
+    },
+    {
+      "file": "vm.su",
+      "function": "sb_pop",
+      "bytes": 6,
+      "kind": "static"
+    },
+    {
+      "file": "vm.su",
+      "function": "execute.part.2",
+      "bytes": 230,
+      "kind": "static"
+    },
+    {
+      "file": "vm.su",
+      "function": "sb_run",
+      "bytes": 20,
+      "kind": "static"
+    },
+    {
+      "file": "vm.su",
+      "function": "sb_execute",
+      "bytes": 20,
+      "kind": "static"
+    }
+  ],
+  "graph": {
+    "uart_byte": [],
+    "output": [
+      "uart_byte"
+    ],
+    "poll": [],
+    "input": [
+      "poll",
+      "uart_byte"
+    ],
+    "reg": [],
+    "nvwrite": [],
+    "nvread": [],
+    "device": [
+      "nvread",
+      "nvwrite",
+      "reg"
+    ],
+    "__vector_16": [],
+    "main": [
+      "sb_terminal"
+    ],
+    "sb_builtin_id": [],
+    "sb_builtin_arity": [],
+    "sb_builtin": [
+      "device",
+      "input",
+      "nvread",
+      "nvwrite",
+      "output",
+      "poll",
+      "read_source",
+      "sb_builtin_arity",
+      "sb_bytes",
+      "sb_float",
+      "sb_format",
+      "sb_int",
+      "sb_length",
+      "sb_parse",
+      "sb_poll",
+      "sb_string"
+    ],
+    "sb_fail": [],
+    "peek": [],
+    "is_name": [],
+    "statement_token": [
+      "device",
+      "input",
+      "nvread",
+      "nvwrite",
+      "output",
+      "poll",
+      "read_source"
+    ],
+    "emit.isra.1": [
+      "sb_fail"
+    ],
+    "word": [
+      "emit.isra.1"
+    ],
+    "constant": [
+      "emit.isra.1"
+    ],
+    "text_constant": [
+      "emit.isra.1",
+      "word"
+    ],
+    "branch": [
+      "emit.isra.1",
+      "word"
+    ],
+    "patch.isra.2": [],
+    "emit_operator": [
+      "emit.isra.1",
+      "patch.isra.2"
+    ],
+    "access_variable.isra.3": [
+      "emit.isra.1",
+      "sb_fail"
+    ],
+    "precedence": [],
+    "operator_push": [
+      "sb_fail"
+    ],
+    "block_push": [
+      "sb_fail"
+    ],
+    "block_top": [
+      "sb_fail"
+    ],
+    "patch_chain.isra.9": [
+      "patch.isra.2"
+    ],
+    "loop_close": [
+      "patch.isra.2",
+      "patch_chain.isra.9"
+    ],
+    "writable.isra.10": [
+      "sb_fail"
+    ],
+    "find.isra.13": [],
+    "lookup_variable": [
+      "find.isra.13"
+    ],
+    "add.isra.16": [
+      "find.isra.13",
+      "sb_fail"
+    ],
+    "line_end": [
+      "sb_fail"
+    ],
+    "variable": [
+      "lookup_variable",
+      "sb_fail"
+    ],
+    "lex_next": [
+      "peek",
+      "sb_fail",
+      "sb_parse"
+    ],
+    "accept": [
+      "lex_next"
+    ],
+    "parse_type": [
+      "accept",
+      "sb_fail"
+    ],
+    "declare": [
+      "accept",
+      "add.isra.16",
+      "find.isra.13",
+      "is_name",
+      "lex_next",
+      "parse_type",
+      "sb_fail"
+    ],
+    "expect": [
+      "accept",
+      "is_name",
+      "lex_next",
+      "sb_fail"
+    ],
+    "expression": [
+      "accept",
+      "access_variable.isra.3",
+      "branch",
+      "constant",
+      "emit.isra.1",
+      "emit_operator",
+      "find.isra.13",
+      "is_name",
+      "lex_next",
+      "lookup_variable",
+      "operator_push",
+      "precedence",
+      "sb_builtin_arity",
+      "sb_builtin_id",
+      "sb_fail",
+      "text_constant",
+      "variable",
+      "word"
+    ],
+    "call_statement": [
+      "emit.isra.1",
+      "expression",
+      "find.isra.13",
+      "lex_next",
+      "sb_builtin_id",
+      "sb_fail"
+    ],
+    "sb_compile": [
+      "accept",
+      "access_variable.isra.3",
+      "add.isra.16",
+      "block_push",
+      "block_top",
+      "branch",
+      "call_statement",
+      "constant",
+      "declare",
+      "emit.isra.1",
+      "expect",
+      "expression",
+      "find.isra.13",
+      "is_name",
+      "lex_next",
+      "line_end",
+      "loop_close",
+      "parse_type",
+      "patch.isra.2",
+      "patch_chain.isra.9",
+      "sb_builtin_id",
+      "sb_fail",
+      "sb_init",
+      "statement_token",
+      "text_constant",
+      "variable",
+      "word",
+      "writable.isra.10"
+    ],
+    "sb_init": [],
+    "sb_error_message": [],
+    "valid_object": [],
+    "sb_int": [],
+    "sb_float": [],
+    "sb_zero": [],
+    "sb_value_get": [],
+    "sb_value_put": [],
+    "sb_retain": [
+      "sb_fail",
+      "valid_object"
+    ],
+    "sb_release": [
+      "sb_fail",
+      "valid_object"
+    ],
+    "sb_object": [
+      "sb_fail",
+      "sb_peaks",
+      "sb_room"
+    ],
+    "sb_string": [
+      "sb_fail",
+      "sb_object"
+    ],
+    "sb_length": [
+      "sb_fail",
+      "valid_object"
+    ],
+    "sb_bytes": [],
+    "sb_convert": [
+      "sb_fail"
+    ],
+    "sb_truth": [
+      "sb_fail"
+    ],
+    "sb_slot_symbol": [],
+    "sb_save": [
+      "device",
+      "input",
+      "nvread",
+      "nvwrite",
+      "output",
+      "poll",
+      "read_source"
+    ],
+    "sb_load": [
+      "device",
+      "input",
+      "nvread",
+      "nvwrite",
+      "output",
+      "poll",
+      "read_source"
+    ],
+    "read_source": [],
+    "command": [],
+    "sb_diagnostic": [
+      "device",
+      "input",
+      "nvread",
+      "nvwrite",
+      "output",
+      "poll",
+      "read_source",
+      "sb_error_message"
+    ],
+    "sb_terminal": [
+      "command",
+      "device",
+      "input",
+      "nvread",
+      "nvwrite",
+      "output",
+      "poll",
+      "read_source",
+      "sb_compile",
+      "sb_diagnostic",
+      "sb_execute",
+      "sb_init",
+      "sb_load",
+      "sb_save"
+    ],
+    "width": [],
+    "marked": [],
+    "sb_validate": [
+      "marked",
+      "sb_builtin_arity",
+      "sb_fail",
+      "sb_slot_symbol",
+      "sb_value_get",
+      "width"
+    ],
+    "integer_math": [
+      "sb_int"
+    ],
+    "sb_integer_text": [],
+    "sb_format": [],
+    "sb_parse": [
+      "sb_float"
+    ],
+    "sb_math": [
+      "integer_math",
+      "sb_bytes",
+      "sb_float",
+      "sb_int",
+      "sb_length",
+      "sb_object",
+      "sb_zero"
+    ],
+    "get32": [],
+    "jump": [
+      "sb_fail"
+    ],
+    "cell": [
+      "sb_fail"
+    ],
+    "control_pop": [
+      "sb_fail",
+      "sb_release",
+      "sb_value_get"
+    ],
+    "store": [
+      "cell",
+      "sb_convert",
+      "sb_release",
+      "sb_value_get",
+      "sb_value_put"
+    ],
+    "write_bytes": [
+      "device",
+      "input",
+      "nvread",
+      "nvwrite",
+      "output",
+      "poll",
+      "read_source",
+      "sb_fail"
+    ],
+    "sb_room": [
+      "sb_fail"
+    ],
+    "sb_peaks": [],
+    "control_push": [
+      "sb_fail",
+      "sb_peaks",
+      "sb_room"
+    ],
+    "sb_poll": [
+      "device",
+      "input",
+      "nvread",
+      "nvwrite",
+      "output",
+      "poll",
+      "read_source",
+      "sb_fail"
+    ],
+    "sb_push": [
+      "sb_fail",
+      "sb_peaks",
+      "sb_release",
+      "sb_room",
+      "sb_value_put"
+    ],
+    "sb_pop": [
+      "sb_fail",
+      "sb_value_get"
+    ],
+    "execute.part.2": [
+      "cell",
+      "control_pop",
+      "control_push",
+      "device",
+      "get32",
+      "input",
+      "jump",
+      "nvread",
+      "nvwrite",
+      "output",
+      "poll",
+      "read_source",
+      "sb_builtin",
+      "sb_bytes",
+      "sb_convert",
+      "sb_fail",
+      "sb_float",
+      "sb_format",
+      "sb_int",
+      "sb_integer_text",
+      "sb_length",
+      "sb_math",
+      "sb_object",
+      "sb_parse",
+      "sb_peaks",
+      "sb_poll",
+      "sb_pop",
+      "sb_push",
+      "sb_release",
+      "sb_retain",
+      "sb_room",
+      "sb_slot_symbol",
+      "sb_string",
+      "sb_truth",
+      "sb_value_get",
+      "sb_value_put",
+      "store",
+      "write_bytes"
+    ],
+    "sb_run": [],
+    "sb_execute": [
+      "execute.part.2",
+      "sb_fail",
+      "sb_validate"
+    ]
+  },
+  "maximum_c_path": [
+    "main",
+    "sb_terminal",
+    "sb_compile",
+    "call_statement",
+    "expression",
+    "accept",
+    "lex_next",
+    "sb_parse",
+    "sb_float"
+  ],
+  "c_path_bytes": 1706,
+  "library_margin": 512,
+  "largest_isr_frame": 9,
+  "interrupt_reserve": 128,
+  "c_stack_reservation": 2560,
+  "static_sram": 9917,
+  "sram_after_reservation": 3907,
+  "measured_on_hardware": false,
+  "assumptions": [
+    "Stock non-reentrant platform callbacks",
+    "Only the supplied Timer0 ISR",
+    "No C recursion; BASIC frames stay in the pool",
+    "512-byte reviewed AVR library/helper margin"
+  ]
+}

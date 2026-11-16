@@ -1,5 +1,8 @@
 # Architecture and memory
 
+This page records stage one. See [the BASIC 1.0 architecture](ARCHITECTURE-1.0.md)
+and [memory layout](MEMORY.md) for current behavior.
+
 ## Compilation
 
 `src/compiler.c` contains a byte-reader lexer, declaration discovery, iterative
