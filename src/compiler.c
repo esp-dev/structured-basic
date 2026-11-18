@@ -64,6 +64,7 @@ typedef struct {
     uint16_t symbol;
     uint8_t kind, op, argc;
 } Operator;
+enum { EXPR_NATIVE_CALL = 5 };
 typedef struct {
     uint16_t start, pending, chain, exits, symbol;
     uint8_t kind, otherwise, flags;
@@ -729,6 +730,11 @@ static void expression(Compiler *c) {
                         operator_push(c, 4, 0, (uint16_t)builtin);
                         continue;
                     }
+                    int native = sb_native_id(c->b->natives, name);
+                    if (native >= 0 && lookup_variable(c, name) == NONE) {
+                        operator_push(c, EXPR_NATIVE_CALL, 0, (uint16_t)native);
+                        continue;
+                    }
                     s = variable(c, name);
                     if (s == NONE)
                         break;
@@ -811,12 +817,15 @@ static void expression(Compiler *c) {
                     emit(c, BC_ARRAY_GET);
                     word(c, o.symbol);
                 } else {
-                    if (!sb_builtin_arity((uint8_t)o.symbol, count)) {
+                    int native = o.kind == EXPR_NATIVE_CALL;
+                    uint8_t id = (uint8_t)o.symbol;
+                    if (!(native ? sb_native_arity(c->b->natives, id, count)
+                                 : sb_builtin_arity(id, count))) {
                         sb_fail(c->b, SB_ARITY);
                         break;
                     }
-                    emit(c, BC_BUILTIN);
-                    emit(c, (uint8_t)o.symbol);
+                    emit(c, native ? BC_NATIVE : BC_BUILTIN);
+                    emit(c, id);
                     emit(c, count);
                 }
             } else if (want) {
@@ -929,11 +938,15 @@ static void loop_close(Compiler *c, Block *b) {
     patch_chain(c, b->exits, c->b->program_end);
     --c->block_count;
 }
+static int callable(Compiler *c, const char *name) {
+    return find(c, SY_FUNCTION, NONE, name) != NONE || sb_builtin_id(name) >= 0 ||
+           (sb_native_id(c->b->natives, name) >= 0 && lookup_variable(c, name) == NONE);
+}
 static void call_statement(Compiler *c, uint32_t position, uint16_t line) {
     c->lex.pos = position;
     c->lex.line = line;
     lex_next(c);
-    if (find(c, SY_FUNCTION, NONE, c->lex.name) == NONE && sb_builtin_id(c->lex.name) < 0) {
+    if (!callable(c, c->lex.name)) {
         sb_fail(c->b, SB_UNKNOWN);
         return;
     }
@@ -970,8 +983,7 @@ static void statement(Compiler *c) {
             }
             memcpy(name, c->lex.name, sizeof(name));
             lex_next(c);
-        } else if (c->lex.token == '(' &&
-                   (find(c, SY_FUNCTION, NONE, name) != NONE || sb_builtin_id(name) >= 0)) {
+        } else if (c->lex.token == '(' && callable(c, name)) {
             call_statement(c, position, source_line);
             break;
         }
@@ -1343,8 +1355,14 @@ static void statement(Compiler *c) {
 }
 
 SBError sb_compile(SBasic *b, SBSource source) {
+    return sb_compile_with_natives(b, source, NULL);
+}
+SBError sb_compile_with_natives(SBasic *b, SBSource source, const SBNativeRegistry *natives) {
     Compiler c;
     sb_init(b);
+    if (natives && natives->count && !natives->entries)
+        return sb_fail(b, SB_ARGUMENT);
+    b->natives = natives;
     memset(&c, 0, sizeof(c));
     c.b = b;
     c.lex.source = source;

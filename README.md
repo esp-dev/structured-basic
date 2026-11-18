@@ -50,6 +50,14 @@ PRINT FACT(12)
 Run `sbasic` without a filename to open the host shell.
 The [examples](examples/) cover arrays, strings, recursion and I/O.
 
+## Add a C extension
+
+Register functions from your own C modules and call them by name from BASIC.
+The [native extension guide](docs/EMBEDDING.md#native-functions) covers the
+registration table, binary strings and error reporting. The
+[BME280 example](examples/native_i2c.bas) uses an I²C adapter supplied by the
+application.
+
 ## Documentation
 
 | Start here | What it covers |

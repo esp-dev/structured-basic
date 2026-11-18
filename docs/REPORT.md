@@ -32,3 +32,18 @@ its call-path assumptions. The physical AVR was not used.
 The [verification summaries](evidence-1.0/) cover the verified revision.
 Build and test commands are in [BUILD.md](BUILD.md). Original Stage 1
 documentation and logs are preserved in Git at `87601c8`.
+
+## Native extensions
+
+The Windows Release, ASan/UBSan, and extended Clang sanitizer profiles each
+passed all six CTest suites. The extended profile includes integer and
+local-bounds checks. A Windows Release built with an external registry ran
+the BME280 example from a BASIC file and printed `96`. The AVR build with
+the same registry ran it through UART and `RUN` in simavr and printed the
+same ID. Both runs used a simulated BME280 bus backend.
+
+| ATmega1284P build | Flash (.text + .data) | Static SRAM (.data + .bss) |
+| --- | ---: | ---: |
+| Before native extensions | 42,706 B | 9,917 B |
+| Native API, default firmware | 43,600 B | 9,919 B |
+| Native API with the example and simulated backend | 44,702 B | 9,927 B |

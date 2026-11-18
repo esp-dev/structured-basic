@@ -14,6 +14,7 @@ function(sbasic_add_core target)
     "${root}/src/value.c"
     "${root}/src/heap.c"
     "${root}/src/builtins.c"
+    "${root}/src/native.c"
     "${root}/src/validate.c"
     "${root}/src/errors.c"
     "${root}/src/storage.c")

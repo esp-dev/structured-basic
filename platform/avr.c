@@ -203,6 +203,9 @@ int main(void) {
     OCR0A = 249;
     TIMSK0 = _BV(OCIE0A);
     memset(&p, 0, sizeof(p));
+#ifdef SB_EXTERNAL_NATIVES
+    p.natives = &sb_application_natives;
+#endif
     p.write = output;
     p.input = input;
     p.poll = poll;

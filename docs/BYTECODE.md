@@ -56,6 +56,7 @@ arena. Bytecode stays private to the interpreter instance.
 | 44 | ENDSELECT | none | Release the SELECT control record |
 | 45 | JNZ | target:u16 | Pop condition and jump if nonzero |
 | 46 | EXIT | control_count:u8, target:u16 | Unwind control records and jump |
+| 47 | NATIVE | registry_index:u8, argc:u8 | Consume arguments and push the native result |
 
 For `PRINT 2 + 3 * 4` on source line 1, the operations are
 `LINE 1; CONST 2; CONST 3; CONST 4; MUL; ADD; PRINT; HALT`.
@@ -65,6 +66,9 @@ routine symbol. Fallthrough returns numeric zero or the empty string.
 RETURN releases locals and active control records before restoring the caller.
 Expression AND and OR are compiled to conditional jumps to short-circuit the
 right-hand side. A multi-item CASE uses BC_OR to combine evaluated comparisons.
+
+Native indices are local to the associated registry. The validator checks
+the index and argument count against that registry.
 
 Symbol records are contiguous and use 11+name_length bytes:
 

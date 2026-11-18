@@ -87,3 +87,19 @@ frames are limited and support forward, direct and mutual calls.
   `ANALOGREAD`, `DELAY` and `MILLIS` call platform services.
 
 See [PLATFORM.md](PLATFORM.md) for host/AVR behavior.
+
+## Native functions
+
+The application or firmware can register functions implemented in C. Use
+`name(args)` in an expression or `CALL name(args)` when the result is unused.
+Names are case insensitive. BASIC evaluates arguments left to right and
+checks the argument count during compilation. Registered functions receive
+and return scalar `INTEGER`, `SINGLE` and `STRING` values. For binary data,
+use `CHR$` to construct bytes and `LEN` to count them, including NUL bytes.
+A successful call with no explicit result returns INTEGER zero. Errors
+reported by the native function stop the current run at the call site.
+
+For example, `I2C_TRANSFER$(0, 118, CHR$(208), 1)` sends the BME280 register
+number on bus 0 at address 0x76 and returns one byte. The function is
+available in builds that register the [I²C adapter](../examples/native_i2c.c).
+See [native extensions](EMBEDDING.md#native-functions) for the C interface.

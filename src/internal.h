@@ -70,7 +70,8 @@ enum {
     BC_CASE,
     BC_ENDSELECT,
     BC_JNZ,
-    BC_EXIT
+    BC_EXIT,
+    BC_NATIVE
 };
 enum {
     BI_ABS,
@@ -136,6 +137,9 @@ SBError sb_math(VM *v, uint8_t op, Value a, Value b, Value *result);
 SBError sb_builtin(VM *v, uint8_t id, uint8_t argc, Value *args, Value *result);
 int sb_builtin_id(const char *name);
 int sb_builtin_arity(uint8_t id, uint8_t argc);
+int sb_native_id(const SBNativeRegistry *registry, const char *name);
+int sb_native_arity(const SBNativeRegistry *registry, uint8_t id, uint8_t argc);
+void sb_call_native(VM *v, uint8_t id, uint8_t argc);
 int sb_format(Value value, char *buffer, size_t capacity);
 int sb_parse(const char *text, Value *result);
 int sb_integer_text(const char *text, int32_t *result);

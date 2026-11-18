@@ -1,0 +1,4 @@
+REM BME280 at I2C address 0x76. Read chip ID register 0xD0.
+DIM ID$ AS STRING
+ID$ = I2C_TRANSFER$(0, 118, CHR$(208), 1)
+PRINT ASC(ID$)

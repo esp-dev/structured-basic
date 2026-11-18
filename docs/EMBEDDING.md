@@ -37,3 +37,59 @@ zero before selecting fields. Route diagnostics using the returned `SBError`,
 input and output transports. Callbacks must return before the next instruction
 and must never reenter or mutate the same instance. An independent instance
 can run with separate buffers and platform context.
+
+## Native functions
+
+Link each driver or library into the application and register its BASIC entry points
+in one table. Register the operations available on the target board. For
+example, add the I²C adapter in [native_i2c.c](../examples/native_i2c.c) to the
+application build alongside the board's bus driver.
+
+```c
+static const SBNativeEntry entries[] SB_NATIVE_TABLE = {
+    {"I2C_TRANSFER$", 4, 4, example_i2c_transfer}
+};
+static const SBNativeRegistry natives = {entries, 1, &board_i2c};
+
+/* Application using the supplied terminal. */
+platform.natives = &natives;
+
+/* Application running a BASIC source directly. */
+SBError error = sb_compile_with_natives(&basic, source, &natives);
+if (error == SB_OK)
+    error = sb_execute(&basic, &platform, 10000, 1);
+```
+
+The stock Windows and AVR applications can link extensions from a separate
+directory. Configure CMake with `-DSB_NATIVE_SOURCES=/path/board_extension.c`
+or pass a quoted, semicolon-separated list of sources. Define
+`const SBNativeRegistry sb_application_natives` in one of those files. Both
+the program-file entry point on Windows and the `RUN` command in the supplied
+terminal use that registry.
+
+Table entries contain the BASIC name, minimum and maximum argument count, and
+a C callback. Use unique uppercase BASIC identifiers in the table. Programs
+can call them in either case. Existing BASIC routines, built-ins and variables
+have priority. The registry and table must stay valid and unchanged while the
+compiled program is in use. The registry's `user` pointer gives callbacks
+access to board or application state. On AVR the table lives in Flash.
+
+A callback reads scalar arguments with `sb_native_arg`. Strings carry an
+explicit byte count and may include zero bytes. Argument strings are borrowed
+for the duration of the callback. `sb_native_return` copies strings into the
+BASIC arena immediately, so the driver's receive buffer can be local. A
+successful callback that sets no result returns INTEGER zero. Return an
+`SBError` for failures such as a type mismatch, an unavailable bus or a
+timeout. Callbacks execute synchronously. Peripheral drivers need their own
+timeouts because the VM instruction budget is checked between instructions.
+
+The [BME280 example](../examples/native_i2c.bas) reads the chip ID from an
+I²C register. Its reference adapter can perform write-only, read-only, or
+combined write/read transfers. It takes a logical bus number, a 7-bit device
+address, outgoing bytes and a receive count of up to 32 bytes. The board
+supplies the actual transfer callback. The host test runs the example through
+the terminal against a simulated device.
+
+```sh
+ctest --test-dir build -R '^native$' --output-on-failure
+```

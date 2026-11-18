@@ -123,6 +123,9 @@ int main(int argc, char **argv) {
     signal(SIGINT, on_signal);
     sb_mock_init(&mock);
     memset(&platform, 0, sizeof(platform));
+#ifdef SB_EXTERNAL_NATIVES
+    platform.natives = &sb_application_natives;
+#endif
     platform.user = &mock;
     platform.write = output;
     platform.diagnostic = diagnostic;
@@ -165,7 +168,7 @@ int main(int argc, char **argv) {
     }
     {
         SBSource source = {read_byte, source_buffer, length};
-        e = sb_compile(&basic, source);
+        e = sb_compile_with_natives(&basic, source, platform.natives);
         if (e == SB_OK)
             e = sb_execute(&basic, &platform, budget, seed);
     }

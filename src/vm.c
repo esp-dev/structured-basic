@@ -590,6 +590,11 @@ static SBError execute(SBasic *b, const SBPlatform *platform, SBPrint legacy, vo
             else
                 sb_push(&v, r);
             break;
+        case BC_NATIVE:
+            slot = b->pool[v.pc++];
+            argc = b->pool[v.pc++];
+            sb_call_native(&v, slot, argc);
+            break;
         case BC_INPUT:
             operand = get16(b->pool + v.pc);
             v.pc += 2;

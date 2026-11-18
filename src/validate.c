@@ -13,6 +13,7 @@ static uint16_t width(SBasic *b, uint16_t p) {
     case BC_DIM:
     case BC_INPUT:
     case BC_BUILTIN:
+    case BC_NATIVE:
         n = 3;
         break;
     case BC_CONST:
@@ -39,7 +40,7 @@ static uint16_t width(SBasic *b, uint16_t p) {
         n = (uint16_t)(n + 3u);
         break;
     default:
-        if (op > BC_EXIT)
+        if (op > BC_NATIVE)
             return 0;
         break;
     }
@@ -136,6 +137,8 @@ SBError sb_validate(SBasic *b) {
             return sb_fail(b, SB_BYTECODE);
         if (op == BC_BUILTIN &&
             (!sb_builtin_arity(b->pool[p + 1], b->pool[p + 2]) || b->pool[p + 2] > 3))
+            return sb_fail(b, SB_BYTECODE);
+        if (op == BC_NATIVE && !sb_native_arity(b->natives, b->pool[p + 1], b->pool[p + 2]))
             return sb_fail(b, SB_BYTECODE);
         if (op == BC_EXIT && b->pool[p + 1] > SB_BLOCK_MAX)
             return sb_fail(b, SB_BYTECODE);

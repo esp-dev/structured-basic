@@ -95,7 +95,7 @@ int sb_terminal(SBTerminal *t) {
         }
         if (command(word, "RUN")) {
             SBSource source = {read_source, t->source, t->length};
-            e = sb_compile(t->basic, source);
+            e = sb_compile_with_natives(t->basic, source, p->natives);
             if (e == SB_OK)
                 e = sb_execute(t->basic, p, t->steps, t->seed);
         } else if (command(word, "SAVE") || command(word, "LOAD")) {

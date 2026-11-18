@@ -83,6 +83,51 @@ typedef struct {
 typedef int (*SBPrint)(void *user, int32_t value);
 
 typedef enum { SB_INTEGER, SB_SINGLE, SB_STRING } SBType;
+
+#ifdef __AVR__
+#include <avr/pgmspace.h>
+#define SB_NATIVE_TABLE PROGMEM
+#else
+#define SB_NATIVE_TABLE
+#endif
+
+typedef struct {
+    SBType type;
+    union {
+        int32_t integer;
+        float single;
+        struct {
+            const uint8_t *data;
+            uint16_t length;
+        } string;
+    } as;
+} SBNativeValue;
+
+typedef struct SBNativeCall SBNativeCall;
+typedef SBError (*SBNativeFunction)(void *user, SBNativeCall *call);
+
+typedef struct {
+    char name[SB_NAME_MAX + 1u];
+    uint8_t min_args, max_args;
+    SBNativeFunction function;
+} SBNativeEntry;
+
+typedef struct {
+    const SBNativeEntry *entries; /* Declare entries with SB_NATIVE_TABLE. */
+    uint8_t count;
+    void *user;
+} SBNativeRegistry;
+
+#ifdef SB_EXTERNAL_NATIVES
+/* Supply this registry when building an application with SB_NATIVE_SOURCES. */
+extern const SBNativeRegistry sb_application_natives;
+#endif
+
+/* Indices start at zero. String arguments are borrowed for the callback only.
+ * sb_native_return immediately copies a string into the BASIC arena. */
+uint8_t sb_native_argc(const SBNativeCall *call);
+SBError sb_native_arg(const SBNativeCall *call, uint8_t index, SBNativeValue *value);
+SBError sb_native_return(SBNativeCall *call, SBNativeValue value);
 enum { SB_EEREAD, SB_EEWRITE, SB_PINMODE, SB_PINREAD, SB_PINWRITE, SB_ADC, SB_DELAY, SB_MILLIS };
 typedef struct {
     void *user;
@@ -94,6 +139,7 @@ typedef struct {
     int (*nvwrite)(void *user, uint16_t address, const uint8_t *data, uint16_t length);
     uint16_t nvsize;
     int (*diagnostic)(void *user, const uint8_t *data, uint16_t length);
+    const SBNativeRegistry *natives; /* Used by sb_terminal when compiling. */
 } SBPlatform;
 
 typedef struct {
@@ -102,6 +148,7 @@ typedef struct {
     uint16_t line, error_line, peak_runtime, peak_calls, peak_eval;
     SBError error;
     uint8_t compiled;
+    const SBNativeRegistry *natives;
 } SBasic;
 
 /* Initialize once; compile invalidates any previous program, including on error.
@@ -109,6 +156,8 @@ typedef struct {
  * Separate instances are independent. A single instance is not reentrant. */
 void sb_init(SBasic *basic);
 SBError sb_compile(SBasic *basic, SBSource source);
+/* Keep the registry and entries valid and unchanged while the program is compiled. */
+SBError sb_compile_with_natives(SBasic *basic, SBSource source, const SBNativeRegistry *natives);
 SBError sb_run(SBasic *basic, SBPrint print, void *user, uint32_t steps);
 const char *sb_error_message(SBError error);
 SBError sb_execute(SBasic *basic, const SBPlatform *platform, uint32_t steps, uint32_t seed);
